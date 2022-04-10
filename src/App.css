@@ -1,51 +1,66 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--primary-color);
+  background-attachment: fixed;
+  color: var(--text-color);
+  letter-spacing: 0.1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-blue);
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
+:root {
+  --primary-blue: #00b4d8;
+  --text-color: #b1bdb4;
+  --black-primary: #16181b;
+  --black-secondary: #121417;
+  --border-color: #4c4c4c;
+  --footer-color: #14213d;
+  --bg-code: #fafafa;
+  --black-bg: #000814;
+  --higlight-color: #007fff;
+  --primary-color: #03045e;
+  --borders-color: rgb(149, 54, 238);
+  --shadow-color: #370617;
+  --accent-color: #606060;
+}
+
+.button-floating {
+  background-color: var(--borders-color);
+  position: fixed;
+  bottom: 4%;
+  right: 3.5%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: white;
+  align-items: center;
+  text-align: center;
+  min-width: 3.2rem;
+  min-height: 3.2rem;
+  border-radius: 50%;
+  color: var(--bg-code);
+  border: 0;
+}
+.button-floating i {
+  font-size: 1.65rem;
+}
+.button-floating:hover {
+  background: var(--shadow-color);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
-}
-
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
+.section__page {
+  min-height: calc(100vh - 200px);
+  margin-top: 4.6rem;
 }
