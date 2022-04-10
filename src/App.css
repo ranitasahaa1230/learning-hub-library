@@ -31,7 +31,7 @@ body {
   --footer-color: #14213d;
   --bg-code: #fafafa;
   --black-bg: #000814;
-  --higlight-color: #007fff;
+  --highlight-color: #007fff;
   --primary-color: #03045e;
   --borders-color: rgb(149, 54, 238);
   --shadow-color: #370617;
@@ -64,3 +64,4 @@ body {
   min-height: calc(100vh - 200px);
   margin-top: 4.6rem;
 }
+

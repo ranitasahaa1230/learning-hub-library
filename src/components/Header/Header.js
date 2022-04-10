@@ -1,7 +1,9 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
+import logo from "../../assets/logo.png";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 export const Header = ({ handleToggleSidebar }) => {
   return (
@@ -13,12 +15,10 @@ export const Header = ({ handleToggleSidebar }) => {
       />
 
       <div className="flex__hub">
-      <img
-        src="http://pngimg.com/uploads/youtube/youtube_PNG2.png"
-        alt=""
-        className="header__logo"
-      />
-      <div className="header__name">LEARNING HUB</div>
+        <img src={logo} alt="logo" className="header__logo" />
+        <Link to="/" className="header__name">
+          Learning Hub
+        </Link>
       </div>
 
       <form>
@@ -28,9 +28,13 @@ export const Header = ({ handleToggleSidebar }) => {
         </button>
       </form>
 
+      <div className="mode__icons">
+          <i className="fa-solid fa-moon"></i>
+        </div>
+
       <div className="header__icons">
         <i className="fa-solid fa-user"></i>
-          <span className="font__icons">LOGIN</span>
+        <span className="font__icons">LOGIN</span>
       </div>
     </div>
   );

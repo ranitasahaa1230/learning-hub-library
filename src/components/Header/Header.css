@@ -24,15 +24,21 @@
 }
 
 .header__logo {
-  width: 30px;
-  height: 30px;
+  width: 2.2rem;
+  height: 2.2rem;
   object-fit: contain;
   display: block;
 }
 
-.header__name{
-  font-size: 1.4rem;
+.header__name, .header__name:hover{
+  font-size: 1.8rem;
+  color: var(--bg-code);
+  font-family: 'Roboto Slab', serif;
   font-style: italic;
+  background: -webkit-linear-gradient(var(--borders-color), var(--bg-code));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .header form {
@@ -43,6 +49,9 @@
   border-radius: 3px;
   border: 1.2px solid;
   background-color: var(--black-secondary);
+}
+.header form:hover{
+  border-color: var(--primary-blue);
 }
 
 .header form input {
@@ -69,6 +78,11 @@
   border: none;
 }
 
+.mode__icons{
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
 .header__icons {
   flex: 0.15;
   display: flex;
@@ -81,6 +95,10 @@
   border-radius: 50%;
   font-size: 1.2rem;
   margin-left: 5px;
+}
+
+.header__icons:hover, .mode__icons:hover{
+  color: var(--primary-blue);
 }
 
 @media (max-width: 880px) {
