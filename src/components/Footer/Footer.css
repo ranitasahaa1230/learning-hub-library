@@ -1,0 +1,23 @@
+.footer {
+  text-align: center;
+  background: var(--footer-color);
+  border-top: 2px solid var(--borders-color);
+  font-size: 1.22rem;
+  padding: 1.6rem;
+  color: var(--bg-code);
+}
+
+.link-social {
+  margin: 1rem;
+}
+.nav-pills .icon {
+  padding: 8px;
+  font-size: 1.3rem;
+  color: var(--bg-code);
+}
+.nav-pills .icon:hover {
+  color: var(--primary-blue);
+}
+span.footer-copyright {
+  font-size: 1rem;
+}
