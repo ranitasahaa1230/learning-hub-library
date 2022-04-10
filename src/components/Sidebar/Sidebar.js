@@ -1,12 +1,12 @@
 import React from "react";
 import {
-  MdSubscriptions,
+  MdOutlineWatchLater,
   MdExitToApp,
   MdThumbUp,
   MdHistory,
-  MdLibraryBooks,
+  MdOutlineExplore,
   MdHome,
-  MdSentimentDissatisfied,
+  MdPlaylistAdd,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
@@ -19,40 +19,44 @@ export const Sidebar = ({ sidebars, handleToggleSidebar }) => {
     >
       <Link to="/">
         <li>
-          <MdHome size={23} />
+          <MdHome size={25} />
           <span>Home</span>
         </li>
       </Link>
-      <Link to="/feed/subscriptions">
+      <Link to="">
         <li>
-          <MdSubscriptions size={23} />
-          <span>Subscriptions</span>
+          <MdOutlineExplore size={25} />
+          <span>Explore</span>
         </li>
       </Link>
-
-      <li>
-        <MdThumbUp size={23} />
-        <span>Liked Video</span>
-      </li>
-
-      <li>
-        <MdHistory size={23} />
-        <span>History</span>
-      </li>
-
-      <li>
-        <MdLibraryBooks size={23} />
-        <span>Library</span>
-      </li>
-      <li>
-        <MdSentimentDissatisfied size={23} />
-        <span>I don't Know</span>
-      </li>
-
+      <Link to="">
+        <li>
+          <MdPlaylistAdd size={25} />
+          <span>Playlists</span>
+        </li>
+      </Link>
+      <Link to="">
+        <li>
+          <MdOutlineWatchLater size={25} />
+          <span>Watch Later</span>
+        </li>
+      </Link>
+      <Link to="">
+        <li>
+          <MdThumbUp size={25} />
+          <span>Liked Videos</span>
+        </li>
+      </Link>
+      <Link to="">
+        <li>
+          <MdHistory size={25} />
+          <span>History</span>
+        </li>
+      </Link>
       <hr />
 
       <li>
-        <MdExitToApp size={23} />
+        <MdExitToApp size={25} />
         <span>Log Out</span>
       </li>
 
