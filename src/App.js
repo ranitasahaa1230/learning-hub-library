@@ -1,41 +1,45 @@
 import "./App.css";
-import logo from "./logo.png";
+import { useState } from "react";
+import { Footer, Header, NotFound } from "./components";
+import { Route, Routes } from "react-router-dom";
+import { History, Home, LikedVideo, Playlist, WatchLater } from "./pages";
+import Mockman from "mockman-js";
 
 function App() {
+  const [sidebars, toggleSidebar] = useState(false);
+
+  const handleToggleSidebar = () => toggleSidebar((prev) => !prev);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="mockBee logo" width="180" height="180" />
-        <h1 className="brand-title">
-          Welcome to <span>mockBee!</span>
-        </h1>
-        <p className="brand-description">
-          Get started by editing <code>src/App.js</code>
-        </p>
-        <div className="links">
-          <a
-            href="https://mockbee.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explore mockBee
-          </a>
-          <a
-            href="https://mockbee.netlify.app/docs/api/introduction"
-            target="_blank"
-            rel="noreferrer"
-          >
-            API Documentation
-          </a>
-          <a
-            href="https://github.com/neogcamp/mockBee"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contribute
-          </a>
-        </div>
-      </header>
+      <Header handleToggleSidebar={handleToggleSidebar} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              sidebars={sidebars}
+              handleToggleSidebar={handleToggleSidebar}
+            />
+          }
+        />
+        <Route path="/mockman" element={<Mockman />} />
+        <Route path="/playlists" element={<Playlist/>}/>
+        <Route path="/watch-later" element={<WatchLater/>}/>
+        <Route path="/liked-videos" element={<LikedVideo/>}/>
+        <Route path="/history" element={<History/>}/>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <button
+        className="button button-floating"
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
+        {" "}
+        <i className="fas fa-arrow-up"></i>
+      </button>
+      <Footer />
     </div>
   );
 }
