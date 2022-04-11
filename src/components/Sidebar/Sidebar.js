@@ -23,31 +23,31 @@ export const Sidebar = ({ sidebars, handleToggleSidebar }) => {
           <span>Home</span>
         </li>
       </Link>
-      <Link to="">
+      <Link to="/">
         <li>
           <MdOutlineExplore size={25} />
           <span>Explore</span>
         </li>
       </Link>
-      <Link to="">
+      <Link to="/playlists">
         <li>
           <MdPlaylistAdd size={25} />
           <span>Playlists</span>
         </li>
       </Link>
-      <Link to="">
+      <Link to="/watch-later">
         <li>
           <MdOutlineWatchLater size={25} />
           <span>Watch Later</span>
         </li>
       </Link>
-      <Link to="">
+      <Link to="/liked-videos">
         <li>
           <MdThumbUp size={25} />
           <span>Liked Videos</span>
         </li>
       </Link>
-      <Link to="">
+      <Link to="/history">
         <li>
           <MdHistory size={25} />
           <span>History</span>

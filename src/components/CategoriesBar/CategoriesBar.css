@@ -3,6 +3,11 @@
   font-size: 0.8rem;
   scrollbar-width: none;
   display: flex;
+  overflow-x: scroll;
+  margin: 0.8rem 0;
+}
+.categoriesBar::-webkit-scrollbar {
+  width: 0px;
 }
 
 .categoriesBar span {
@@ -13,10 +18,12 @@
   border-radius: 2rem;
   cursor: pointer;
   transition: transform 0.2s ease-in;
+  color: var(--bg-code);
 }
 .categoriesBar span:hover {
   background-color: var(--borders-color);
   border: 0;
+  outline: none;
 }
 
 .categoriesBar .active {

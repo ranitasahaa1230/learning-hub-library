@@ -33,6 +33,7 @@ a {
 
 .sidebar li:hover {
   background-color: var(--borders-color);
+  color: var(--bg-code);
 }
 
 hr {

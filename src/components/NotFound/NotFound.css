@@ -27,3 +27,11 @@
     margin-top: 2rem;
   }
 }
+@media (max-width: 560px) {
+  .not__found{
+    margin: auto;
+  }
+  .not__found img{
+    height: 40%;
+  }
+}

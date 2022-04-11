@@ -34,6 +34,7 @@ export const Header = ({ handleToggleSidebar }) => {
 
       <div className="header__icons">
         <i className="fa-solid fa-user"></i>
+        {/* <i class="fa-solid fa-sun"></i> */}
         <span className="font__icons">LOGIN</span>
       </div>
     </div>

@@ -38,6 +38,19 @@ body {
   --accent-color: #606060;
 }
 
+.dark__mode{
+  --primary-color: #03045e;
+  --text-color: #b1bdb4;
+  --bg-code: #fafafa;
+
+}
+
+.light__mode{
+  --primary-color: #fafafa;
+  --bg-code:#000814;
+  --text-color:#000814;
+}
+
 .button-floating {
   background-color: var(--borders-color);
   position: fixed;
@@ -60,7 +73,7 @@ body {
   background: var(--shadow-color);
 }
 
-.section__page {
+.section__page{
   min-height: calc(100vh - 200px);
   margin-top: 4.6rem;
 }

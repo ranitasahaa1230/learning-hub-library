@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { Footer, Header, NotFound } from "./components";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages";
+import { History, Home, LikedVideo, Playlist, WatchLater } from "./pages";
 import Mockman from "mockman-js";
 
 function App() {
@@ -24,6 +24,10 @@ function App() {
           }
         />
         <Route path="/mockman" element={<Mockman />} />
+        <Route path="/playlists" element={<Playlist/>}/>
+        <Route path="/watch-later" element={<WatchLater/>}/>
+        <Route path="/liked-videos" element={<LikedVideo/>}/>
+        <Route path="/history" element={<History/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <button
