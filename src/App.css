@@ -30,7 +30,7 @@ body {
   --bg-code: #fafafa;
   --black-bg: #000814;
   --highlight-color: #007fff;
-  --primary-color: #03045e;
+  --primary-color: #040404;
   --borders-color: rgb(149, 54, 238);
   --shadow-color: #370617;
   --accent-color: #606060dc;
@@ -38,21 +38,25 @@ body {
   --bg-white: #fafafa;
   --bg-black:#000814;
   --logo-color:#580aff;
+  --wishlist: #ae2012;
+  --secondary-color:#571089;
 }
 
 .dark__mode{
-  --primary-color: #181818;
+  --primary-color: #040404;
   --bg-code: #fafafa;
   --black-bg: #000814;
   --borders-color: rgb(149, 54, 238);
   --footer-color: #14213d;
+  --border-color: rgb(149, 54, 238);
 }
 
 .light__mode{
-  --primary-color: #fafafa;
+  --primary-color: #ffffff;
   --bg-code:#000814;
   --black-bg: #fafafa;
   --borders-color:#ac4ff4;
+  --border-color: #571089;
 }
 
 .button-floating {

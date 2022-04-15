@@ -17,7 +17,9 @@ export const Header = ({ handleToggleSidebar }) => {
       />
 
       <div className="flex__hub">
-      <Link to="/"><img src={logo} alt="logo" className="header__logo" /></Link> 
+        <Link to="/">
+          <img src={logo} alt="logo" className="header__logo" />
+        </Link>
         <Link to="/" className="header__name">
           Learning Hub
         </Link>
@@ -30,15 +32,24 @@ export const Header = ({ handleToggleSidebar }) => {
         </button>
       </form>
 
-      <div className="mode__icons" onClick={()=>changeTheme()}>
-      {theme ? <i className="fa-solid fa-moon"></i>
-         : <i className="fa-solid fa-sun"></i>}
-        </div>
+      <div className="mode__icons" onClick={() => changeTheme()}>
+        {theme ? (
+          <i className="fa-solid fa-moon"></i>
+        ) : (
+          <i className="fa-solid fa-sun"></i>
+        )}
+      </div>
 
+      <Link to="/signup">
+        <button className="header__signup">SIGN UP</button>
+      </Link>
+
+      <Link to="/login">
       <div className="header__icons">
         <i className="fa-solid fa-user"></i>
         <span className="font__icons">LOGIN</span>
       </div>
+      </Link>
     </div>
   );
 };

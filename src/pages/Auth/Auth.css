@@ -1,0 +1,178 @@
+.section__login {
+  background: var(--primary-color);
+  min-height: calc(100vh - 200px);
+  margin-top: 4.6rem;
+  padding-bottom: 7.2rem;
+}
+.form-box {
+  width: 100%;
+  max-width: 30rem;
+  position: relative;
+  padding: 10px 0;
+  top: 3.5rem;
+  margin: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0 var(--highlight-color);
+  color: var(--bg-code);
+}
+.button-box {
+  margin: 0.5rem;
+  text-align: center;
+  position: relative;
+}
+.toggle-btn {
+  padding: 4px 0;
+  color: var(--border-color);
+  font-size: 1.68rem;
+  font-weight: 700;
+}
+
+.input-group {
+  transition: 0.5s;
+  margin: 0 2rem;
+}
+
+.input-fields {
+  display: block;
+  width: 80%;
+  margin: 6px 0.5rem;
+  border: 1px solid var(--accent-color);
+  background: transparent;
+  border-radius: 0.2rem;
+  color: var(--black-bg);
+  padding: 0.25rem 0.4rem;
+  font-size: 1rem;
+}
+.input-fields:hover,
+.visibility:hover {
+  border: 2px solid var(--primary-blue);
+}
+.visibility-fields:focus {
+  outline: none;
+}
+.password-label {
+  width: 100%;
+  display: block;
+  font-size: 1.04rem;
+  padding: 0.2rem;
+}
+
+.password-label::after {
+  content: "*";
+  color: var(--wishlist);
+}
+.submit-loginbtns {
+  width: 22rem;
+  display: block;
+  cursor: pointer;
+  padding: 8px 2rem;
+  margin: 0.8rem 1rem !important;
+  background: var(--border-color);
+  border: 0;
+  outline: none;
+  color: var(--bg-white);
+  border-radius: 0.8rem !important;
+  font-size: 1.05rem;
+}
+.submit-loginbtn {
+  width: 22rem;
+  display: block;
+  cursor: pointer;
+  padding: 5px 3rem;
+  margin: 1rem 1rem;
+  border: 2px solid var(--border-color);
+  outline: none;
+  color: var(--border-color);
+  border-radius: 0.8rem;
+  font-size: 1.1rem;
+  background: none;
+}
+
+.submit-loginbtns:hover,
+.submit-loginbtn:hover {
+  opacity: 0.9;
+}
+.submit-loginbtn:hover {
+  background: var(--secondary-color);
+  color: var(--bg-white);
+}
+input.check-box {
+  margin: 0.8rem 0.5rem;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+span.check-psswd {
+  color: var(--bg-code);
+  font-size: 1rem;
+}
+.checkbox-block {
+  display: flex;
+  align-items: center;
+}
+.input-account {
+  padding: 2px;
+  font-size: 1.05rem;
+  color: var(--bg-code);
+  margin: 0.2rem 0.5rem;
+  padding-bottom: 1rem;
+}
+.primary-account {
+  color: var(--bg-code);
+  text-decoration: none;
+  border-bottom: 2px solid var(--border-color);
+  margin-left: 0.5rem;
+}
+.forget-psswd {
+  color: var(--border-color);
+  font-size: 1.05rem;
+  margin-left: 3.8rem;
+}
+.visibility {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--accent-color);
+  width: 80%;
+  margin: 5px 0.5rem;
+}
+.visibility-icon {
+  padding-right: 2rem;
+  color: var(--border-color);
+  font-size: 1.2rem;
+}
+.visibility-fields {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--black-bg);
+  padding: 0.25rem 0.4rem;
+  font-size: 1rem;
+}
+
+.login-error-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--wishlist);
+}
+.login-error-msg i {
+  font-size: 1rem;
+}
+.login-error-msg p {
+  font-size: 1rem;
+}
+
+@media (max-width: 630px) {
+  .form-box {
+    max-width: 22rem;
+  }
+  .submit-loginbtn,
+  .submit-loginbtns {
+    width: 16rem;
+  }
+  .checkbox-block {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+}

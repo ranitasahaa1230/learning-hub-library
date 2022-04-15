@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { Footer, Header, NotFound } from "./components";
 import { Route, Routes } from "react-router-dom";
-import { History, Home, LikedVideo, Playlist, WatchLater } from "./pages";
+import { History, Home, LikedVideo, Login, Playlist, SignUp, WatchLater } from "./pages";
 import Mockman from "mockman-js";
 import { useTheme } from "./contexts";
 
@@ -30,6 +30,8 @@ function App() {
         <Route path="/watch-later" element={<WatchLater/>}/>
         <Route path="/liked-videos" element={<LikedVideo/>}/>
         <Route path="/history" element={<History/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<SignUp/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <button
