@@ -10,7 +10,7 @@ export const NotFound = () => {
     <div className="section__page ">
     <div className="not__found">
       <img src={error} alt="error" />
-      Oops!! You have entered a wrong URL.😕{"  "}
+      <div className="error-details">Oops!! You have entered a wrong URL.😕{"  "}</div>
       <Link to="/" className="span__not">
         {" "}
         Go Back!

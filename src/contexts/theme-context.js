@@ -1,13 +1,26 @@
-const { createContext, useContext } = require("react");
+const { createContext, useContext, useState, useEffect } = require("react");
 
 const ThemeContext = createContext("");
 
 const ThemeProvider = ({ children }) => {
-  return(
-  <ThemeContext.Provider>
-        {children}
-  </ThemeContext.Provider>
-)
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem("userTheme")) ?? false
+  );
+
+  const changeTheme = () => {
+    setTheme((prevTheme) => !prevTheme);
+  };
+
+  //update localstorage theme
+  useEffect(() => {
+    localStorage.setItem("userTheme", JSON.stringify(theme));
+  }, [theme]);
+
+  return (
+    <ThemeContext.Provider value={{ theme, changeTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };
 
 const useTheme = () => useContext(ThemeContext);

@@ -12,14 +12,14 @@
 }
 
 a {
-  color: var(--text-color);
+  color: var(--bg-code);
   text-decoration: none;
 }
 
 .sidebar li {
   display: flex;
   align-items: center;
-  color: var(--text-color);
+  color: var(--bg-code);
   padding: 0.6rem 1.5rem;
   margin: 0.2rem 0;
   cursor: pointer;
@@ -33,7 +33,7 @@ a {
 
 .sidebar li:hover {
   background-color: var(--borders-color);
-  color: var(--bg-code);
+  color: var(--bg-white);
 }
 
 hr {

@@ -5,8 +5,11 @@
   justify-content: center;
   font-size: 1.8rem;
   color: var(--bg-code);
+  background: var(--primary-color);
 }
-
+.error-details{
+  color: var(--bg-code);
+}
 .span__not {
     color: var(--accent-color);
   border-bottom: 4px solid var(--borders-color);

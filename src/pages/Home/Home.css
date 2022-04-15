@@ -1,3 +1,4 @@
 .app__container {
   display: flex;
+  background: var(--primary-color);
 }
