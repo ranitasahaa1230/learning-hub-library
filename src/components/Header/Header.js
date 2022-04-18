@@ -1,7 +1,7 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
-import { FaAngleRight} from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -46,7 +46,7 @@ export const Header = ({ handleToggleSidebar }) => {
         </button>
       </form>
 
-      <div className="mode__icons" onClick={() => changeTheme()}>
+      <div className="mode__icons" onClick={changeTheme}>
         {theme ? (
           <i className="fa-solid fa-moon"></i>
         ) : (

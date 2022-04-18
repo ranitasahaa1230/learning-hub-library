@@ -1,16 +1,18 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-const ThemeContext = createContext("");
+const ThemeContext = createContext({userTheme:"dark"});
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(
-    JSON.parse(localStorage.getItem("userTheme")) ?? false
-  );
+  const [theme, setTheme] = useState(false);
 
   const changeTheme = () => {
-    setTheme((prevTheme) => !prevTheme);
+    setTheme((prevTheme) =>!prevTheme);
   };
 
+  useEffect(() => {
+    setTheme(JSON.parse(localStorage.getItem("userTheme")) ?? false)
+  }, [])
+  
   //update localstorage theme
   useEffect(() => {
     localStorage.setItem("userTheme", JSON.stringify(theme));
