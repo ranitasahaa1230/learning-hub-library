@@ -3,7 +3,6 @@ import { useState } from "react";
 import {
   Footer,
   Header,
-  // Loader,
   NotFound,
   RequireAuth,
   Toast,
