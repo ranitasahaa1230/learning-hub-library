@@ -35,10 +35,8 @@ export const signupHandler = function (schema, request) {
       createdAt: formatDate(),
       updatedAt: formatDate(),
       ...rest,
-      likes: [],
-      history: [],
-      playlists: [],
-      watchlater: [],
+      cart: [],
+      wishlist: [],
     };
     const createdUser = schema.users.create(newUser);
     const encodedToken = sign({ _id, email }, process.env.REACT_APP_JWT_SECRET);
@@ -68,7 +66,7 @@ export const loginHandler = function (schema, request) {
       return new Response(
         404,
         {},
-        { errors: ["The email you entered is not Registered. Not Found error"] }
+        { errors: ["The email you entered is not Registered. Not Found Error"] }
       );
     }
     if (password === foundUser.password) {
