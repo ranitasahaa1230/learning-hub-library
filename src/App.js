@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Footer, Header, NotFound, RequireAuth } from "./components";
+import { Footer, Header, Loader, NotFound, RequireAuth } from "./components";
 import { Route, Routes } from "react-router-dom";
 import {
   History,
@@ -33,6 +33,7 @@ function App() {
         draggable="true"
         progress="undefined"
       />{" "}
+      {/* <Loader /> */}
       <Routes>
         <Route
           path="/"

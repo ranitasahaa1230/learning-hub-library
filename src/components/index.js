@@ -5,3 +5,5 @@ export {NotFound} from "./NotFound/NotFound";
 export { CategoriesBar } from "./CategoriesBar/CategoriesBar";
 export { VideoCard } from "./VideoCard/VideoCard";
 export { RequireAuth } from "./RequireAuth/RequireAuth";
+export { Loader } from "./Loader/Loader";
+
