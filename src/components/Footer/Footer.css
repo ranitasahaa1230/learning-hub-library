@@ -4,7 +4,7 @@
   border-top: 2px solid var(--borders-color);
   font-size: 1.22rem;
   padding: 1.6rem;
-  color: var(--bg-code);
+  color: var(--bg-white);
 }
 
 .link-social {
@@ -13,7 +13,7 @@
 .nav-pills .icon {
   padding: 8px;
   font-size: 1.3rem;
-  color: var(--bg-code);
+  color: var(--bg-white);
 }
 .nav-pills .icon:hover {
   color: var(--primary-blue);

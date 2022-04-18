@@ -68,7 +68,7 @@ export const loginHandler = function (schema, request) {
       return new Response(
         404,
         {},
-        { errors: ["The email you entered is not Registered. Not Found error"] }
+        { errors: ["The email you entered is not Registered. Not Found Error"] }
       );
     }
     if (password === foundUser.password) {

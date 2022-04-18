@@ -8,9 +8,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: var(--primary-color);
   background-attachment: fixed;
-  color: var(--text-color);
   letter-spacing: 0.1px;
 }
 
@@ -24,31 +22,39 @@ body {
 
 :root {
   --primary-blue: #00b4d8;
-  --text-color: #b1bdb4;
-  --black-primary: #16181b;
-  --black-secondary: #121417;
-  --border-color: #4c4c4c;
+  --black-primary: #3d4349;
   --footer-color: #14213d;
+  --color: #03045e;
   --bg-code: #fafafa;
   --black-bg: #000814;
   --highlight-color: #007fff;
-  --primary-color: #03045e;
+  --primary-color: #040404;
   --borders-color: rgb(149, 54, 238);
   --shadow-color: #370617;
-  --accent-color: #606060;
+  --accent-color: #606060dc;
+  --primary-hover: #ac4ff4;
+  --bg-white: #fafafa;
+  --bg-black: #000814;
+  --logo-color: #580aff;
+  --wishlist: #ae2012;
+  --secondary-color: #571089;
 }
 
-.dark__mode{
-  --primary-color: #03045e;
-  --text-color: #b1bdb4;
+.dark__mode {
+  --primary-color: #040404;
   --bg-code: #fafafa;
-
+  --black-bg: #000814;
+  --borders-color: rgb(149, 54, 238);
+  --footer-color: #14213d;
+  --border-color: rgb(149, 54, 238);
 }
 
-.light__mode{
-  --primary-color: #fafafa;
-  --bg-code:#000814;
-  --text-color:#000814;
+.light__mode {
+  --primary-color: #ffffff;
+  --bg-code: #000814;
+  --black-bg: #fafafa;
+  --borders-color: #ac4ff4;
+  --border-color: #571089;
 }
 
 .button-floating {
@@ -63,7 +69,7 @@ body {
   min-width: 3.2rem;
   min-height: 3.2rem;
   border-radius: 50%;
-  color: var(--bg-code);
+  color: var(--bg-white);
   border: 0;
 }
 .button-floating i {
@@ -73,8 +79,7 @@ body {
   background: var(--shadow-color);
 }
 
-.section__page{
+.section__page {
   min-height: calc(100vh - 200px);
   margin-top: 4.6rem;
 }
-
