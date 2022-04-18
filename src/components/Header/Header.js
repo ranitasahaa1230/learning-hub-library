@@ -1,13 +1,27 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
+import { FaAngleRight} from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import "./Header.css";
-import { Link } from "react-router-dom";
-import { useTheme } from "../../contexts";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth, useTheme } from "../../contexts";
+import { useToast } from "../../hooks";
 
 export const Header = ({ handleToggleSidebar }) => {
   const { theme, changeTheme } = useTheme();
+  const {
+    state: { isAuth, user },
+  } = useAuth();
+  const { showToast } = useToast();
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    localStorage.clear();
+    showToast("Logged Out!", "success");
+    navigate(0);
+  };
+
   return (
     <div className="header">
       <FaBars
@@ -44,12 +58,24 @@ export const Header = ({ handleToggleSidebar }) => {
         <button className="header__signup">SIGN UP</button>
       </Link>
 
-      <Link to="/login">
-      <div className="header__icons">
-        <i className="fa-solid fa-user"></i>
-        <span className="font__icons">LOGIN</span>
-      </div>
-      </Link>
+      {isAuth ? (
+        <div className="header__icons">
+          <span className="header__user">
+            {user?.firstName}
+            <FaAngleRight size={22} />
+          </span>
+          <button className="header__logout" onClick={logoutHandler}>
+            LOGOUT
+          </button>
+        </div>
+      ) : (
+        <Link to="/login">
+          <div className="header__icons">
+            <i className="fa-solid fa-user"></i>
+            <span className="font__icons">LOGIN</span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 };

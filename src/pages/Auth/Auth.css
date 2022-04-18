@@ -35,13 +35,13 @@
 .input-fields {
   display: block;
   width: 80%;
-  margin: 6px 0.5rem;
+  margin: 2px 0.5rem;
   border: 1px solid var(--accent-color);
   background: transparent;
   border-radius: 0.2rem;
-  color: var(--black-bg);
-  padding: 0.25rem 0.4rem;
-  font-size: 1rem;
+  color: var(--bg-code);
+  padding: 0.2rem 0.4rem;
+  font-size: 0.95rem;
 }
 .input-fields:hover,
 .visibility:hover {
@@ -65,8 +65,8 @@
   width: 22rem;
   display: block;
   cursor: pointer;
-  padding: 8px 2rem;
-  margin: 0.8rem 1rem !important;
+  padding: 6.8px 2rem;
+  margin: 0.6rem 1rem !important;
   background: var(--border-color);
   border: 0;
   outline: none;
@@ -78,8 +78,8 @@
   width: 22rem;
   display: block;
   cursor: pointer;
-  padding: 5px 3rem;
-  margin: 1rem 1rem;
+  padding: 3px 3rem;
+  margin: 0.7rem 1rem;
   border: 2px solid var(--border-color);
   outline: none;
   color: var(--border-color);
@@ -97,9 +97,10 @@
   color: var(--bg-white);
 }
 input.check-box {
-  margin: 0.8rem 0.5rem;
+  margin: 0.6rem 0.5rem;
   width: 1.05rem;
   height: 1.05rem;
+  cursor: pointer;
 }
 span.check-psswd {
   color: var(--bg-code);
@@ -110,11 +111,10 @@ span.check-psswd {
   align-items: center;
 }
 .input-account {
-  padding: 2px;
+  padding: 0.45rem;
   font-size: 1.05rem;
   color: var(--bg-code);
   margin: 0.2rem 0.5rem;
-  padding-bottom: 1rem;
 }
 .primary-account {
   color: var(--bg-code);
@@ -144,9 +144,9 @@ span.check-psswd {
   width: 100%;
   border: none;
   background: transparent;
-  color: var(--black-bg);
-  padding: 0.25rem 0.4rem;
-  font-size: 1rem;
+  color: var(--bg-code);
+  padding: 0.2rem 0.4rem;
+  font-size: 0.95rem;
 }
 
 .login-error-msg {
@@ -156,10 +156,13 @@ span.check-psswd {
   color: var(--wishlist);
 }
 .login-error-msg i {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin: 0.2rem 0;
 }
 .login-error-msg p {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin: 0.5rem 0.4rem;
+
 }
 
 @media (max-width: 630px) {

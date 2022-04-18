@@ -1,20 +1,38 @@
 import "./App.css";
 import { useState } from "react";
-import { Footer, Header, NotFound } from "./components";
+import { Footer, Header, NotFound, RequireAuth } from "./components";
 import { Route, Routes } from "react-router-dom";
-import { History, Home, LikedVideo, Login, Playlist, SignUp, WatchLater } from "./pages";
+import {
+  History,
+  Home,
+  LikedVideo,
+  Login,
+  Playlist,
+  SignUp,
+  WatchLater,
+} from "./pages";
 import Mockman from "mockman-js";
 import { useTheme } from "./contexts";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [sidebars, toggleSidebar] = useState(false);
-  const {theme}=useTheme();
+  const { theme } = useTheme();
 
   const handleToggleSidebar = () => toggleSidebar((prev) => !prev);
 
   return (
     <div className={theme ? "light__mode" : "dark__mode"}>
       <Header handleToggleSidebar={handleToggleSidebar} />
+      <ToastContainer
+        position="top-right"
+        autoClose="3000"
+        hideProgressBar="false"
+        closeOnClick="true"
+        pauseOnHover="true"
+        draggable="true"
+        progress="undefined"
+      />{" "}
       <Routes>
         <Route
           path="/"
@@ -26,12 +44,42 @@ function App() {
           }
         />
         <Route path="/mockman" element={<Mockman />} />
-        <Route path="/playlists" element={<Playlist/>}/>
-        <Route path="/watch-later" element={<WatchLater/>}/>
-        <Route path="/liked-videos" element={<LikedVideo/>}/>
-        <Route path="/history" element={<History/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        {/* <Route path="/watch/:id" element={<SingleVideoPage />} /> */}
+
+        <Route
+          path="/playlists"
+          element={
+            <RequireAuth>
+              <Playlist />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/watch-later"
+          element={
+            <RequireAuth>
+              <WatchLater />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/history"
+          element={
+            <RequireAuth>
+              <History />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/liked-videos"
+          element={
+            <RequireAuth>
+              <LikedVideo />
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <button
