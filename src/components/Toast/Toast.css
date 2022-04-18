@@ -1,0 +1,9 @@
+.Toastify__toast-container--top-right {
+  top: 4em;
+  right: 1em;
+}
+
+.Toastify__toast-body > div:last-child {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+}

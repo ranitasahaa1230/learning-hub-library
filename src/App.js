@@ -1,6 +1,13 @@
 import "./App.css";
 import { useState } from "react";
-import { Footer, Header, NotFound, RequireAuth } from "./components";
+import {
+  Footer,
+  Header,
+  Loader,
+  NotFound,
+  RequireAuth,
+  Toast,
+} from "./components";
 import { Route, Routes } from "react-router-dom";
 import {
   History,
@@ -13,7 +20,6 @@ import {
 } from "./pages";
 import Mockman from "mockman-js";
 import { useTheme } from "./contexts";
-import { ToastContainer } from "react-toastify";
 
 function App() {
   const [sidebars, toggleSidebar] = useState(false);
@@ -24,15 +30,8 @@ function App() {
   return (
     <div className={theme ? "light__mode" : "dark__mode"}>
       <Header handleToggleSidebar={handleToggleSidebar} />
-      <ToastContainer
-        position="top-right"
-        autoClose="3000"
-        hideProgressBar="false"
-        closeOnClick="true"
-        pauseOnHover="true"
-        draggable="true"
-        progress="undefined"
-      />{" "}
+      <Toast />
+      {/* <Loader /> */}
       <Routes>
         <Route
           path="/"
