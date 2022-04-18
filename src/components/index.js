@@ -6,3 +6,5 @@ export { CategoriesBar } from "./CategoriesBar/CategoriesBar";
 export { VideoCard } from "./VideoCard/VideoCard";
 export { RequireAuth } from "./RequireAuth/RequireAuth";
 export { Toast } from "./Toast/Toast";
+export { Loader } from "./Loader/Loader";
+

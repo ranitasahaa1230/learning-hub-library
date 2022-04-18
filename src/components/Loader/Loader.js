@@ -5,7 +5,7 @@ import "./Loader.css";
 export const Loader=()=>{
   return (
     <div className="loader-wrapper flex-center">
-      <img src={loader} className="loader"></img>
+      <img src={loader} className="loader" alt="loader-text"/>
     </div>
   );
 }
