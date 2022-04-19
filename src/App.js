@@ -1,12 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import {
-  Footer,
-  Header,
-  NotFound,
-  RequireAuth,
-  Toast,
-} from "./components";
+import { Footer, Header, NotFound, RequireAuth, Toast } from "./components";
 import { Route, Routes } from "react-router-dom";
 import {
   History,
@@ -16,6 +10,7 @@ import {
   Playlist,
   SignUp,
   WatchLater,
+  SingleVideoPage,
 } from "./pages";
 import Mockman from "mockman-js";
 import { useTheme } from "./contexts";
@@ -28,7 +23,7 @@ function App() {
 
   return (
     <div className={theme ? "light__mode" : "dark__mode"}>
-      <Header handleToggleSidebar={handleToggleSidebar} />
+      {/* <Header handleToggleSidebar={handleToggleSidebar} /> */}
       <Toast />
       {/* <Loader /> */}
       <Routes>
@@ -44,8 +39,7 @@ function App() {
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        {/* <Route path="/watch/:id" element={<SingleVideoPage />} /> */}
-
+        <Route path="/video/:videoId" element={<SingleVideoPage />} />
         <Route
           path="/playlists"
           element={
