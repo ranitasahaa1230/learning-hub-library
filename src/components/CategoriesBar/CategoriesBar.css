@@ -30,7 +30,7 @@
 }
 
 .categoriesBar .active {
-  color: var(--bg-code);
+  color: var(--bg-white);
   background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  border-color: var(--bg-white);
 }
