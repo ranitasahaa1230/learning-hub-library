@@ -5,8 +5,7 @@ import { useVideos } from "../../contexts";
 
 export const VideoListing = () => {
   const {
-    videoState: { loading, videos },
-    videoDispatch,
+    videoState: { videos },
   } = useVideos();
 
   return (

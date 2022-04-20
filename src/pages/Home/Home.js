@@ -7,10 +7,6 @@ export const Home = () => {
   return (
     <div className="section__page">
       <main className="app__container">
-        {/* <Sidebar
-          sidebars={sidebars}
-          handleToggleSidebar={handleToggleSidebar}
-        /> */}
         <Container fluid className="app__main">
           <VideoListing />
         </Container>
