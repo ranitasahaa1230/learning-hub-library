@@ -9,7 +9,7 @@ export const VideoListing = () => {
   } = useVideos();
 
   return (
-    <div>
+    <div className="section__page">
       <Container>
         <CategoriesBar />
         <Row>
