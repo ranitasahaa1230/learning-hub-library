@@ -1,0 +1,9 @@
+const videosActions = {
+  SET_VIDEOS: "SET_VIDEOS",
+  INITIALIZE: "INITIALIZE",
+  SET_ERROR: "SET_ERROR",
+  SET_CATEGORY: "SET_CATEGORY",
+  APPLY_SEARCH_TERM: "APPLY_SEARCH_TERM",
+};
+
+export { videosActions };

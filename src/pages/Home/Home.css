@@ -1,4 +1,6 @@
 .app__container {
   display: flex;
   background: var(--primary-color);
+  margin-left: 250px;
+  flex-direction: column;
 }

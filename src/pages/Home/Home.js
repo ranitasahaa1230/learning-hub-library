@@ -1,21 +1,16 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Sidebar } from "../../components";
 import { VideoListing } from "../VideoListing/VideoListing";
 import "./Home.css";
 
-export const Home = ({ sidebars, handleToggleSidebar }) => {
+export const Home = () => {
   return (
-    <div className="section__page">
-      <div className="app__container">
-        <Sidebar
-          sidebars={sidebars}
-          handleToggleSidebar={handleToggleSidebar}
-        />
-        <Container fluid className="app__main">
-          <VideoListing />
-        </Container>
-      </div>
-    </div>
+    // <div className="section__page">
+    <main className="app__container">
+      <Container fluid className="app__main">
+        <VideoListing />
+      </Container>
+    </main>
+    // </div>
   );
 };

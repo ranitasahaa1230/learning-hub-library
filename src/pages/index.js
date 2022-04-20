@@ -6,3 +6,5 @@ export {History} from "./History/History";
 export { Playlist } from "./Playlist/Playlist";
 export { Login } from "./Auth/Login";
 export { SignUp } from "./Auth/SignUp";
+export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
+
