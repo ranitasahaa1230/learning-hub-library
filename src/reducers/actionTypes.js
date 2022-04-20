@@ -5,6 +5,7 @@ const videosActions = {
   SET_CATEGORY: "SET_CATEGORY",
   APPLY_SEARCH_TERM: "APPLY_SEARCH_TERM",
   FILTER_BY_SEARCH:"FILTER_BY_SEARCH",
+  SET_LIKES:"SET_LIKES",
 };
 
 export { videosActions };

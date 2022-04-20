@@ -72,7 +72,7 @@
 .video__space {
   padding: 0.3rem;
 }
-li {
+.video__features li {
   list-style: none;
   display: inline-block;
 }
