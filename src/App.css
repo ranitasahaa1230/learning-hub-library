@@ -28,7 +28,7 @@ body {
   --bg-code: #fafafa;
   --black-bg: #000814;
   --highlight-color: #007fff;
-  --primary-color: #040404;
+  --primary-color: #141319;
   --borders-color: rgb(149, 54, 238);
   --shadow-color: #370617;
   --accent-color: #606060dc;
@@ -41,7 +41,7 @@ body {
 }
 
 .dark__mode {
-  --primary-color: #040404;
+  --primary-color: #141319;
   --bg-code: #fafafa;
   --black-bg: #000814;
   --borders-color: rgb(149, 54, 238);

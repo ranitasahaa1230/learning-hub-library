@@ -30,4 +30,8 @@ export const categories = [
     _id: uuid(),
     categoryName: "TypeScript",
   },
+  {
+    _id: uuid(),
+    categoryName: "React Native",
+  },
 ];
