@@ -5,8 +5,9 @@ import { FaAngleRight } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth, useTheme } from "../../contexts";
+import { useAuth, useTheme, useVideos } from "../../contexts";
 import { useToast } from "../../hooks";
+import { videosActions } from "../../reducers/actionTypes";
 
 export const Header = ({ handleToggleSidebar }) => {
   const { theme, changeTheme } = useTheme();
@@ -15,6 +16,11 @@ export const Header = ({ handleToggleSidebar }) => {
   } = useAuth();
   const { showToast } = useToast();
   const navigate = useNavigate();
+
+  const {
+    videoDispatch,
+  } = useVideos();
+  const { FILTER_BY_SEARCH } = videosActions;
 
   const logoutHandler = () => {
     localStorage.clear();
@@ -40,7 +46,8 @@ export const Header = ({ handleToggleSidebar }) => {
       </div>
 
       <form>
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" 
+        onChange={(e) =>videoDispatch({ type: FILTER_BY_SEARCH, payload: e.target.value })}/>
         <button type="submit">
           <AiOutlineSearch size={22} />
         </button>

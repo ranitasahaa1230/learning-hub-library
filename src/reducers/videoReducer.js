@@ -1,6 +1,7 @@
 import { videosActions } from "./actionTypes";
 
-const { SET_VIDEOS, SET_ERROR, INITIALIZE, SET_CATEGORY } = videosActions;
+const { SET_VIDEOS, SET_ERROR, INITIALIZE, SET_CATEGORY, FILTER_BY_SEARCH } =
+  videosActions;
 
 const videoReducer = (state, action) => {
   switch (action.type) {
@@ -15,8 +16,12 @@ const videoReducer = (state, action) => {
 
     case SET_CATEGORY:
       return { ...state, selectedCategory: action.payload };
+
+    case FILTER_BY_SEARCH:
+      return { ...state, searchQuery: action.payload };
+
     default:
-      return state;
+      throw new Error("Action type not found.");
   }
 };
 

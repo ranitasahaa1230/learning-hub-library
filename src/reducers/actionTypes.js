@@ -4,6 +4,7 @@ const videosActions = {
   SET_ERROR: "SET_ERROR",
   SET_CATEGORY: "SET_CATEGORY",
   APPLY_SEARCH_TERM: "APPLY_SEARCH_TERM",
+  FILTER_BY_SEARCH:"FILTER_BY_SEARCH",
 };
 
 export { videosActions };
