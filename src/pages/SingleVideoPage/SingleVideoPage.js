@@ -13,7 +13,7 @@ export const SingleVideoPage = () => {
   const { showToast } = useToast();
   useDocumentTitle("Single Video Details");
 
-  const { _id, title, description, creator, uploaded } = video ?? {};
+  const { title, description, creator, uploaded } = video ?? {};
 
   useEffect(() => {
     (async () => {
@@ -28,6 +28,7 @@ export const SingleVideoPage = () => {
         showToast("error", "Could not fetch the videos.");
       }
     })();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoId]);
 
   return (
