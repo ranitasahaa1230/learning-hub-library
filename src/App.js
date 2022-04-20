@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Footer, Header, NotFound, RequireAuth, Toast } from "./components";
+import { Footer, Header, NotFound, RequireAuth, Sidebar, Toast } from "./components";
 import { Route, Routes } from "react-router-dom";
 import {
   History,
@@ -23,7 +23,11 @@ function App() {
 
   return (
     <div className={theme ? "light__mode" : "dark__mode"}>
-      {/* <Header handleToggleSidebar={handleToggleSidebar} /> */}
+      <Header handleToggleSidebar={handleToggleSidebar} />
+       <Sidebar
+          sidebars={sidebars}
+          handleToggleSidebar={handleToggleSidebar}
+        />
       <Toast />
       {/* <Loader /> */}
       <Routes>
