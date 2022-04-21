@@ -16,6 +16,8 @@ const VideoProvider = ({ children }) => {
   const [videoState, videoDispatch] = useReducer(videoReducer, {
     loading: false,
     videos: [],
+    likedVideos:[],
+    watchLater:[],
     error: "",
     selectedCategory: "all",
     searchQuery: "",
