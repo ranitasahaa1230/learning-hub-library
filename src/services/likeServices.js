@@ -1,6 +1,7 @@
 import axios from "axios";
+import { UPDATE_LIKE_VIDEOS } from "../reducers";
 
-const addToLikes = async (video, likeDispatch, showToast) => {
+const addToLikes = async (video, videoDispatch, showToast) => {
   try {
     const {
       data: { likes },
@@ -12,28 +13,28 @@ const addToLikes = async (video, likeDispatch, showToast) => {
       }
     );
 
-    likeDispatch({ type: "UPDATE_LIKE_VIDEOS", payload: likes });
-    showToast("success", "Video added in liked videos");
+    videoDispatch({ type: UPDATE_LIKE_VIDEOS, payload: likes });
+    showToast("Video added in liked videos", "success");
   } catch (error) {
-    showToast("error", "Could not add in liked videos");
+    showToast("Could not add in liked videos", "error");
   }
 };
 
-const removeFromLikes = async (videoId, likeDispatch, showToast) => {
+const removeFromLikes = async (videoId, videoDispatch, showToast) => {
     try {
       const {
         data: { likes },
-      } = await axios.post(
+      } = await axios.delete(
         `/api/user/likes/${videoId}`,
         {
           headers: { authorization: localStorage.getItem("token") },
         }
       );
   
-      likeDispatch({ type: "UPDATE_LIKE_VIDEOS", payload: likes });
-      showToast("success", "Video removed from liked videos");
+      videoDispatch({ type: UPDATE_LIKE_VIDEOS, payload: likes });
+      showToast("Video removed from liked videos", "success");
     } catch (error) {
-      showToast("success", "Could not remove the video");
+      showToast("Could not remove the video", "error");
     }
   };
 

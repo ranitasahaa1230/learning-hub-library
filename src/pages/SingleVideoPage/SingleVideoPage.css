@@ -18,10 +18,13 @@
   font-size: 1.4rem;
   color: var(--bg-code);
   font-weight: 700;
+  margin: 0.6rem 0;
 }
 .video__channels {
   display: flex;
   gap: 0.5rem;
+  margin: 0.6rem 0;
+
 }
 .video__channels img {
   width: 45px;
@@ -50,7 +53,6 @@
   font-size: 1rem;
 }
 .video__features {
-  margin-right: 1rem;
   padding: 0.38rem 0.68rem;
   white-space: nowrap;
   border: 1.5px solid var(--bg-code);
@@ -61,6 +63,7 @@
   outline: none;
   background: gray;
   border: 0;
+  margin: 0.5rem 1rem  0.6rem 0;
 }
 .video__features:hover {
   background-color: var(--borders-color);

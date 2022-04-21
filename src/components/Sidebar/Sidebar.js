@@ -9,9 +9,11 @@ import {
   MdPlaylistAdd,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useVideos } from "../../contexts";
 import "./Sidebar.css";
 
 export const Sidebar = ({ sidebars, handleToggleSidebar }) => {
+  const {videoState:{likedVideos, watchLater}}=useVideos();
   return (
     <aside
       className={sidebars ? "sidebar open" : "sidebar"}
@@ -38,13 +40,13 @@ export const Sidebar = ({ sidebars, handleToggleSidebar }) => {
       <Link to="/watch-later">
         <li>
           <MdOutlineWatchLater size={25} />
-          <span>Watch Later</span>
+          <span>Watch Later{" "} {watchLater.length}</span>
         </li>
       </Link>
       <Link to="/liked-videos">
         <li>
           <MdThumbUp size={25} />
-          <span>Liked Videos</span>
+          <span>Liked Videos{" "}{likedVideos.length}</span>
         </li>
       </Link>
       <Link to="/history">

@@ -6,6 +6,7 @@
   overflow-x: scroll;
   margin: 0.8rem 0;
   color: var(--bg-code);
+  /* padding-top: 3.2rem; */
 }
 .categoriesBar::-webkit-scrollbar {
   width: 0px;
