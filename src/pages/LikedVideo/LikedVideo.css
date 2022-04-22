@@ -15,7 +15,7 @@
 }
 
 .video__desc {
-  color:var(--highlight-color);
+  color:var(--border-color);
   font-weight: bolder;
 }
 .liked__list {

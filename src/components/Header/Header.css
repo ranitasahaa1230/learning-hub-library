@@ -145,6 +145,10 @@
   background: var(--highlight-color);
 }
 
+span.font__icons{
+  margin-right: 0;
+}
+
 @media (max-width: 880px) {
   .header__name {
     display: none;
