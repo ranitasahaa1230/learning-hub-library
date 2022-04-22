@@ -5,11 +5,12 @@
   width: 250px;
   padding-top: 1rem;
   transition: transform 0.2s ease-in;
-  position: fixed;
+  /* position: fixed; */
+  position: sticky;
   top: 10vh;
   left: 0;
-  height: 100%;
-  background: var(--primary-color);
+  /* height: 100%; */
+  /* background: var(--primary-color); */
 }
 
 a {

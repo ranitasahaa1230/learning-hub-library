@@ -1,0 +1,8 @@
+.text__quiz{
+    color: var(--bg-code);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}

@@ -1,6 +1,14 @@
-.app__container {
+/* .app__container {
   display: flex;
   background: var(--primary-color);
   margin-left: 250px;
   flex-direction: column;
+} */
+
+.app__container {
+  display: flex;
+  background: var(--primary-color);
+  padding-top:4rem;
+  min-height: calc(100vh - 150px);
+
 }

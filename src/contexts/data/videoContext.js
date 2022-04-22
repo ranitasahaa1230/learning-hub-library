@@ -7,6 +7,7 @@ import {
 } from "react";
 import { videoReducer } from "../../reducers";
 import { videosActions } from "../../reducers/actionTypes";
+import { filterVideoList, getSearchedVideos } from "../../utlities";
 const { INITIALIZE, SET_VIDEOS, SET_ERROR } = videosActions;
 
 const VideoContext = createContext();
@@ -15,8 +16,10 @@ const VideoProvider = ({ children }) => {
   const [videoState, videoDispatch] = useReducer(videoReducer, {
     loading: false,
     videos: [],
+    likedVideos:[],
+    watchLater:[],
     error: "",
-    selectedCategory: "All",
+    selectedCategory: "all",
     searchQuery: "",
   });
 
@@ -34,8 +37,11 @@ const VideoProvider = ({ children }) => {
     })();
   }, []);
 
+  const filteredList = filterVideoList(videoState.selectedCategory, videoState.videos);
+  const finalVideoList =getSearchedVideos(filteredList,videoState.searchQuery)
+
   return (
-    <VideoContext.Provider value={{ videoState, videoDispatch }}>
+    <VideoContext.Provider value={{ videoState, videoDispatch, finalVideoList }}>
       {children}
     </VideoContext.Provider>
   );

@@ -1,22 +1,52 @@
 import { videosActions } from "./actionTypes";
+import {
+  UPDATE_LIKE_VIDEOS,
+  REMOVE_LIKE_VIDEOS,
+  UPDATE_WATCH_LATER_VIDEOS,
+  // REMOVE_WATCH_LATER_VIDEOS,
+} from "./constant";
 
-const { SET_VIDEOS, SET_ERROR, INITIALIZE, SET_CATEGORY } = videosActions;
+const { SET_VIDEOS, SET_ERROR, INITIALIZE, SET_CATEGORY, FILTER_BY_SEARCH } =
+  videosActions;
 
-const videoReducer = (state, action) => {
+const videoReducer = (videoState, action) => {
   switch (action.type) {
     case INITIALIZE:
-      return { ...state, loading: true, error: "" };
+      return { ...videoState, loading: true, error: "" };
 
     case SET_VIDEOS:
-      return { ...state, loading: false, videos: action.payload };
+      return { ...videoState, loading: false, videos: action.payload };
 
     case SET_ERROR:
-      return { ...state, loading: false, error: action.payload };
+      return { ...videoState, loading: false, error: action.payload };
 
     case SET_CATEGORY:
-      return { ...state, selectedCategory: action.payload };
+      return { ...videoState, selectedCategory: action.payload };
+
+    case FILTER_BY_SEARCH:
+      return { ...videoState, searchQuery: action.payload };
+
+    case UPDATE_LIKE_VIDEOS:
+      return {
+        ...videoState,
+        likedVideos: [...action.payload],
+      };
+
+    case REMOVE_LIKE_VIDEOS:
+      return {
+        ...videoState,
+        likedVideos: videoState.likedVideos.filter(
+          ({ _id }) => _id !== action.payload
+        ),
+      };
+
+    case UPDATE_WATCH_LATER_VIDEOS:
+      return {
+        ...videoState,
+        watchLater: [...action.payload],
+      };
     default:
-      return state;
+      throw new Error("Action type not found.");
   }
 };
 

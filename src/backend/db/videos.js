@@ -298,7 +298,7 @@ export const videos = [
     description:
       "Explained this keyword and How the value of this changes dynamically with practical examples. | JS interview questions,  Javascript functions,  This in Javascript",
     creator: "CodeWellTech",
-    category: "JavaScript",
+    category: "Javascript",
     uploaded: "14 Dec 2021",
     thumbnail:"https://yt3.ggpht.com/elLCb55aDbzlveyfopEgudtDhJwTwqz8iEY8O_L0WocTwh-cqLjz9XfX0kLTxvNQLk8NDmfjFAI=s88-c-k-c0x00ffffff-no-rj",
     comments: [

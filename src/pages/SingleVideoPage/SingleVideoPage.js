@@ -1,19 +1,34 @@
 import axios from "axios";
 import { AiFillEye } from "react-icons/ai";
-import { MdOutlineWatchLater, MdThumbUp, MdPlaylistAdd } from "react-icons/md";
+import { Container } from "react-bootstrap";
+import {
+  MdOutlineWatchLater,
+  MdThumbUp,
+  MdPlaylistAdd,
+} from "react-icons/md";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import { useToast, useDocumentTitle } from "../../hooks";
 import "./SingleVideoPage.css";
+import { useAuth, useVideos } from "../../contexts";
+import { isInLikedVideo, isInWatchLaterVideo } from "../../utlities";
+import { addToLikes, addToWatchLater, removeFromLikes, removeFromWatchLater } from "../../services";
+import { Sidebar } from "../../components";
 
 export const SingleVideoPage = () => {
   const [loader, setLoader] = useState(false);
   const [video, setVideo] = useState(null);
+  const navigate = useNavigate();
   const { videoId } = useParams();
   const { showToast } = useToast();
-  useDocumentTitle("Single Video Details");
+  const {videoState:{likedVideos, watchLater}, videoDispatch}=useVideos();
+  const {state:{user}}=useAuth();
 
-  const { title, description, creator, uploaded, views, thumbnail} = video ?? {};
+  useDocumentTitle("Single Video Details");
+  const { _id, title, description, creator, uploaded, views, thumbnail} = video ?? {};
+
+  const videoInLiked=isInLikedVideo(likedVideos,_id);
+  const videoInWatchLater=isInWatchLaterVideo(watchLater,_id);
 
   useEffect(() => {
     (async () => {
@@ -25,19 +40,51 @@ export const SingleVideoPage = () => {
         setVideo(video);
         setLoader(false);
       } catch (error) {
-        showToast("error", "Could not fetch the videos.");
+        showToast("Could not fetch the videos.", "error");
       }
     })();
         // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoId]);
 
+  const handleLikeHandler=()=>{
+    if(!user){
+      navigate('/login')
+    }else{
+      if(!videoInLiked){
+        console.log('Liked 00', _id)
+        addToLikes(video,videoDispatch,showToast)
+      }else{
+        removeFromLikes( _id,videoDispatch, showToast)
+        console.log('DisLiked', video)
+      }
+    }
+  }
+
+  const handleWatchLater=()=>{
+    if(!user){
+      navigate('/login')
+    }else{
+      console.log('ADDED')
+      if(!videoInWatchLater){
+        console.log('Liked 00', _id)
+        addToWatchLater(video,videoDispatch,showToast)
+        console.log('Liked', video)
+      }else{
+        removeFromWatchLater( _id,videoDispatch, showToast)
+        console.log('DisLiked', video)
+      }
+    }
+  }
+
   return (
-    <div className="section__page">
-      <div className="single__video">
+    <div className="app__container">
+      <Sidebar/>
+      <Container fluid className="app__main">
+      <div className="play__section">
         {loader ? (
           "Loading..."
         ) : (
-          <div className="play-container">
+          <div className="play-containers">
             <iframe
               width="100%"
               height="100%"
@@ -72,16 +119,16 @@ export const SingleVideoPage = () => {
             </div>
 
             <div className="dislay__flex">
-              <div className="video__features">
+              <div className="video__features" onClick={handleLikeHandler}>
                 <li>
                   <MdThumbUp size={25} />
-                  <span className="video__space">Like</span>
+                  <span className="video__space">{videoInLiked ? "Liked" :"Like"}</span>
                 </li>
               </div>
-              <div className="video__features">
+              <div className="video__features" onClick={handleWatchLater}>
                 <li>
                   <MdOutlineWatchLater size={25} />
-                  <span className="video__space">Watch Later</span>
+                  <span className="video__space">{videoInWatchLater ? "Will Watch Later" : "Watch Later"}</span>
                 </li>
               </div>
               <div className="video__features">
@@ -101,9 +148,10 @@ export const SingleVideoPage = () => {
                 <div>Comments :</div>
               </div>
             </div>
-          </div>
+            </div>
         )}
-      </div>
+        </div>
+      </Container>
     </div>
   );
 };

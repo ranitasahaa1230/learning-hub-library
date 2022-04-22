@@ -1,6 +1,5 @@
 import "./App.css";
-import { useState } from "react";
-import { Footer, Header, NotFound, RequireAuth, Sidebar, Toast } from "./components";
+import { Footer, Header, NotFound, RequireAuth, Toast } from "./components";
 import { Route, Routes } from "react-router-dom";
 import {
   History,
@@ -16,30 +15,15 @@ import Mockman from "mockman-js";
 import { useTheme } from "./contexts";
 
 function App() {
-  const [sidebars, toggleSidebar] = useState(false);
   const { theme } = useTheme();
-
-  const handleToggleSidebar = () => toggleSidebar((prev) => !prev);
 
   return (
     <div className={theme ? "light__mode" : "dark__mode"}>
-      <Header handleToggleSidebar={handleToggleSidebar} />
-       <Sidebar
-          sidebars={sidebars}
-          handleToggleSidebar={handleToggleSidebar}
-        />
+      <Header />
       <Toast />
       {/* <Loader /> */}
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              sidebars={sidebars}
-              handleToggleSidebar={handleToggleSidebar}
-            />
-          }
-        />
+        <Route path="/" element={<Home />} />
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
