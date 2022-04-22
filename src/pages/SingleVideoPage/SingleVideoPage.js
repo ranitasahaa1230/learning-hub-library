@@ -64,7 +64,6 @@ export const SingleVideoPage = () => {
     if(!user){
       navigate('/login')
     }else{
-      console.log('ADDED')
       if(!videoInWatchLater){
         console.log('Liked 00', _id)
         addToWatchLater(video,videoDispatch,showToast)
@@ -119,13 +118,13 @@ export const SingleVideoPage = () => {
             </div>
 
             <div className="dislay__flex">
-              <div className="video__features" onClick={handleLikeHandler}>
+              <div className={`${videoInLiked ? "video__select" :"video__features"}`} onClick={handleLikeHandler}>
                 <li>
                   <MdThumbUp size={25} />
                   <span className="video__space">{videoInLiked ? "Liked" :"Like"}</span>
                 </li>
               </div>
-              <div className="video__features" onClick={handleWatchLater}>
+              <div className={`${videoInLiked ? "video__select" :"video__features"}`} onClick={handleWatchLater}>
                 <li>
                   <MdOutlineWatchLater size={25} />
                   <span className="video__space">{videoInWatchLater ? "Will Watch Later" : "Watch Later"}</span>

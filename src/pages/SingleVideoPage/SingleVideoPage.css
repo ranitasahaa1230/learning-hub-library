@@ -51,6 +51,21 @@
   gap: 0.5rem;
   font-size: 1rem;
 }
+.video__select{
+  background-color: var(--borders-color);
+  padding: 0.38rem 0.68rem;
+  white-space: nowrap;
+  border: 1.5px solid var(--bg-code);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+  color: var(--bg-white);
+  outline: none;
+  border: 0;
+  margin: 0.5rem 1rem 0.6rem 0;
+  list-style: none;
+}
+
 .video__features {
   padding: 0.38rem 0.68rem;
   white-space: nowrap;
@@ -86,4 +101,13 @@
   display: flex;
   color: var(--bg-code);
   gap: 0.5rem;
+}
+
+@media screen and (max-width:500px) {
+  .play-containers iframe{
+      height: calc(50vh - 106px);
+  }
+  .video__features{
+    margin: 0.4rem;
+  }
 }
