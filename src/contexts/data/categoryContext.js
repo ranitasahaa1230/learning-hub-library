@@ -3,11 +3,14 @@ import { createContext, useContext, useState, useEffect } from "react";
 const CategoryContext = createContext();
 
 const CategoryProvider = ({ children }) => {
+  const [sidebars, toggleSidebar] = useState(false);
   const [categoryState, setCategoryState] = useState({
     loading: false,
     categories: [],
     error: "",
   });
+
+  const handleToggleSidebar = () => toggleSidebar((prev) => !prev);
 
   useEffect(() => {
     (async () => {
@@ -36,7 +39,7 @@ const CategoryProvider = ({ children }) => {
   }, []);
 
   return (
-    <CategoryContext.Provider value={{ categoryState, setCategoryState }}>
+    <CategoryContext.Provider value={{ categoryState, setCategoryState, sidebars, handleToggleSidebar }}>
       {children}
     </CategoryContext.Provider>
   );

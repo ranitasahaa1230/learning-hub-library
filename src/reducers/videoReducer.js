@@ -10,7 +10,6 @@ const { SET_VIDEOS, SET_ERROR, INITIALIZE, SET_CATEGORY, FILTER_BY_SEARCH } =
   videosActions;
 
 const videoReducer = (videoState, action) => {
-  // console.log(action.payload, videoState)
   switch (action.type) {
     case INITIALIZE:
       return { ...videoState, loading: true, error: "" };

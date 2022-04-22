@@ -8,7 +8,7 @@ export const VideoListing = () => {
   const { finalVideoList } = useVideos();
 
   return (
-    <div className="section__page">
+    <div className="section__pages">
       <Container>
         <CategoriesBar />
         <Row>

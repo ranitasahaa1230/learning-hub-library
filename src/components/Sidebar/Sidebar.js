@@ -9,14 +9,15 @@ import {
   MdPlaylistAdd,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useVideos } from "../../contexts";
+import { useCategory, useVideos } from "../../contexts";
 import "./Sidebar.css";
 
-export const Sidebar = ({ sidebars, handleToggleSidebar }) => {
+export const Sidebar = () => {
+  const {sidebars, handleToggleSidebar}=useCategory();
   const {videoState:{likedVideos, watchLater}}=useVideos();
   return (
     <aside
-      className={sidebars ? "sidebar open" : "sidebar"}
+      className={`${sidebars ? "sidebar open" : "sidebar"}`}
       onClick={() => handleToggleSidebar(false)}
     >
       <Link to="/">

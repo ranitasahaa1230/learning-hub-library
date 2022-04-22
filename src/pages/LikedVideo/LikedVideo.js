@@ -1,6 +1,7 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { VideoCard } from "../../components";
+import { Sidebar, VideoCard } from "../../components";
 import { useVideos } from "../../contexts";
 import "./LikedVideo.css";
 
@@ -11,8 +12,10 @@ export const LikedVideo = () => {
   const isLikedVideo = likedVideos.length > 0;
 
   return (
-    <div className="section__page ">
-      <div className="play-container">
+    <div className="app__container">
+    <Sidebar/>
+    <Container fluid className="app__main">
+      <div className="play__section">
         {loading ? (
           "Loadingg........."
         ) : (
@@ -43,6 +46,7 @@ export const LikedVideo = () => {
           </div>
         )}
       </div>
+      </Container>
     </div>
   );
 };

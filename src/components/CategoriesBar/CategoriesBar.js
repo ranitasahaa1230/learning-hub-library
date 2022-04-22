@@ -14,7 +14,7 @@ export const CategoriesBar = () => {
   const { SET_CATEGORY } = videosActions;
 
   return (
-    <span className="categoriesBar">
+    <div className="categoriesBar">
       <span
         className={`${selectedCategory === "all" ? "active" : ""}`}
         onClick={() => videoDispatch({ type: SET_CATEGORY, payload: "all" })}
@@ -32,6 +32,6 @@ export const CategoriesBar = () => {
           </span>
         );
       })}
-    </span>
+    </div>
   );
 };

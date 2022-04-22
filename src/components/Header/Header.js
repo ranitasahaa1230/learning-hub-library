@@ -5,12 +5,13 @@ import { FaAngleRight } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth, useTheme, useVideos } from "../../contexts";
+import { useAuth, useCategory, useTheme, useVideos } from "../../contexts";
 import { useToast } from "../../hooks";
 import { videosActions } from "../../reducers/actionTypes";
 
-export const Header = ({ handleToggleSidebar }) => {
+export const Header = () => {
   const { theme, changeTheme } = useTheme();
+  const { handleToggleSidebar } = useCategory();
   const {
     state: { isAuth, user },
   } = useAuth();

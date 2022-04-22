@@ -1,13 +1,19 @@
 import axios from "axios";
 import { AiFillEye } from "react-icons/ai";
-import { MdOutlineWatchLater, MdThumbUp, MdPlaylistAdd } from "react-icons/md";
+import { Container } from "react-bootstrap";
+import {
+  MdOutlineWatchLater,
+  MdThumbUp,
+  MdPlaylistAdd,
+} from "react-icons/md";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import { useToast, useDocumentTitle } from "../../hooks";
 import "./SingleVideoPage.css";
 import { useAuth, useVideos } from "../../contexts";
 import { isInLikedVideo, isInWatchLaterVideo } from "../../utlities";
 import { addToLikes, addToWatchLater, removeFromLikes, removeFromWatchLater } from "../../services";
+import { Sidebar } from "../../components";
 
 export const SingleVideoPage = () => {
   const [loader, setLoader] = useState(false);
@@ -71,8 +77,10 @@ export const SingleVideoPage = () => {
   }
 
   return (
-    <div className="section__page">
-      <div className="play-container">
+    <div className="app__container">
+      <Sidebar/>
+      <Container fluid className="app__main">
+      <div className="play__section">
         {loader ? (
           "Loading..."
         ) : (
@@ -140,9 +148,10 @@ export const SingleVideoPage = () => {
                 <div>Comments :</div>
               </div>
             </div>
-          </div>
+            </div>
         )}
-      </div>
+        </div>
+      </Container>
     </div>
   );
 };
