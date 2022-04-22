@@ -124,7 +124,7 @@ export const SingleVideoPage = () => {
                   <span className="video__space">{videoInLiked ? "Liked" :"Like"}</span>
                 </li>
               </div>
-              <div className={`${videoInLiked ? "video__select" :"video__features"}`} onClick={handleWatchLater}>
+              <div className={`${videoInWatchLater ? "video__select" :"video__features"}`} onClick={handleWatchLater}>
                 <li>
                   <MdOutlineWatchLater size={25} />
                   <span className="video__space">{videoInWatchLater ? "Will Watch Later" : "Watch Later"}</span>
