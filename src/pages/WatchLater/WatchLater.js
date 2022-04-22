@@ -7,7 +7,6 @@ import "./WatchLater.css";
 export const WatchLater = () => {
   const {
     videoState: { watchLater, loading },
-    videoDispatch,
   } = useVideos();
   const isInWatchLaterVideo = watchLater.length > 0;
 

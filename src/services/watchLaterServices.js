@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ADD_WATCH_LATER_VIDEOS, UPDATE_WATCH_LATER_VIDEOS } from "../reducers";
+import { UPDATE_WATCH_LATER_VIDEOS } from "../reducers";
 
 const addToWatchLater = async (video, videoDispatch, showToast) => {
   try {

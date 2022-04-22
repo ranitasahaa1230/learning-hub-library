@@ -7,7 +7,6 @@ import "./LikedVideo.css";
 export const LikedVideo = () => {
   const {
     videoState: { likedVideos, loading },
-    videoDispatch,
   } = useVideos();
   const isLikedVideo = likedVideos.length > 0;
 
