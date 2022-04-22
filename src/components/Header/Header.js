@@ -23,9 +23,12 @@ export const Header = ({ handleToggleSidebar }) => {
   const { FILTER_BY_SEARCH } = videosActions;
 
   const logoutHandler = () => {
+    // localStorage.removeItem("login");
+    // localStorage.removeItem("user");
+    // localStorage.removeItem("signup");
     localStorage.clear();
-    showToast("Logged Out!", "success");
     navigate(0);
+    showToast("Logged Out!", "success");
   };
 
   return (
