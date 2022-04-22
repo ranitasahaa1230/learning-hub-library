@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Sidebar, VideoCard } from "../../components";
+import { Loader, Sidebar, VideoCard } from "../../components";
 import { useVideos } from "../../contexts";
 import "./LikedVideo.css";
 
@@ -13,11 +13,11 @@ export const LikedVideo = () => {
 
   return (
     <div className="app__container">
-    <Sidebar/>
+    {/* <Sidebar/> */}
     <Container fluid className="app__main">
       <div className="play__section">
         {loading ? (
-          "Loadingg........."
+          <Loader/>
         ) : (
           <div>
             <h3 className="video__heading">

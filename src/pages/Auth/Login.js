@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Sidebar } from "../../components";
 import { useAuth } from "../../contexts";
 import { useDocumentTitle, useToast } from "../../hooks";
 import "./Auth.css";
@@ -42,7 +44,8 @@ export function Login() {
     setLoginForm({ email: "ranitasaha21@gmail.com", password: "ranitasaha" });
   }
   return (
-    <div className="section__login">
+    <div className="app__container">
+      <Sidebar />
       <div className="form-box">
         <div className="button-box">
           <div id="btn"></div>

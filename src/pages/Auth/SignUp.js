@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useReducer, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Sidebar } from "../../components";
 import { useAuth } from "../../contexts";
 import { useDocumentTitle, useToast } from "../../hooks";
 import { signupReducer } from "../../reducers";
@@ -58,7 +59,8 @@ export function SignUp() {
   };
 
   return (
-    <div className="section__login">
+    <div className="app__container">
+      <Sidebar />
       <div className="form-box">
         <div className="button-box">
           <h3 className="toggle-btn">SIGN UP</h3>

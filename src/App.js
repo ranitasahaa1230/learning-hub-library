@@ -21,7 +21,6 @@ function App() {
     <div className={theme ? "light__mode" : "dark__mode"}>
       <Header />
       <Toast />
-      {/* <Loader /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mockman" element={<Mockman />} />

@@ -13,7 +13,7 @@ import "./SingleVideoPage.css";
 import { useAuth, useVideos } from "../../contexts";
 import { isInLikedVideo, isInWatchLaterVideo } from "../../utlities";
 import { addToLikes, addToWatchLater, removeFromLikes, removeFromWatchLater } from "../../services";
-import { Sidebar } from "../../components";
+import { Loader, Sidebar } from "../../components";
 
 export const SingleVideoPage = () => {
   const [loader, setLoader] = useState(false);
@@ -81,7 +81,7 @@ export const SingleVideoPage = () => {
       <Container fluid className="app__main">
       <div className="play__section">
         {loader ? (
-          "Loading..."
+          <Loader/>
         ) : (
           <div className="play-containers">
             <iframe
