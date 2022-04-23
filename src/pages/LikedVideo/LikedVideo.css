@@ -15,7 +15,7 @@
 }
 
 .video__desc {
-  color: #58a6ff;
+  color: var(--count-desc);
   font-weight: bolder;
     /* color:var(--highlight-color); */
 }

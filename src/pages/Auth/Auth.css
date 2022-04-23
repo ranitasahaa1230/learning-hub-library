@@ -59,8 +59,9 @@
 
 .password-label::after {
   content: "*";
-  color: var(--wishlist);
+  color: var(--trash-color);
 }
+
 .submit-loginbtns {
   width: 22rem;
   display: block;
@@ -153,7 +154,7 @@ span.check-psswd {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--wishlist);
+  color: var(--trash-color);
 }
 .login-error-msg i {
   font-size: 1.1rem;

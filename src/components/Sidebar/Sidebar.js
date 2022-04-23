@@ -8,13 +8,25 @@ import {
   MdHome,
   MdPlaylistAdd,
 } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { useCategory, useVideos } from "../../contexts";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth, useCategory, useVideos } from "../../contexts";
+import { useToast } from "../../hooks";
 import "./Sidebar.css";
 
 export const Sidebar = () => {
   const {sidebars, handleToggleSidebar}=useCategory();
-  const {videoState:{likedVideos, watchLater}}=useVideos();
+  const { showToast } = useToast();
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    // localStorage.removeItem("login");
+    // localStorage.removeItem("user");
+    // localStorage.removeItem("signup");
+    localStorage.clear();
+    navigate(0);
+    showToast("Logged Out!", "success");
+  };
+  
   return (
     <aside
       className={`${sidebars ? "sidebar open" : "sidebar"}`}
@@ -41,13 +53,13 @@ export const Sidebar = () => {
       <Link to="/watch-later">
         <li>
           <MdOutlineWatchLater size={25} />
-          <span>Watch Later{" "} {watchLater.length}</span>
+          <span>Watch Later{" "}</span>
         </li>
       </Link>
       <Link to="/liked-videos">
         <li>
           <MdThumbUp size={25} />
-          <span>Liked Videos{" "}{likedVideos.length}</span>
+          <span>Liked Videos{" "}</span>
         </li>
       </Link>
       <Link to="/history">
@@ -58,7 +70,7 @@ export const Sidebar = () => {
       </Link>
       <hr />
 
-      <li>
+      <li onClick={logoutHandler}>
         <MdExitToApp size={25} />
         <span>Log Out</span>
       </li>

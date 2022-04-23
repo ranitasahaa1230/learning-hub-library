@@ -4,9 +4,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import "./Header.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useAuth, useCategory, useTheme, useVideos } from "../../contexts";
-import { useToast } from "../../hooks";
 import { videosActions } from "../../reducers/actionTypes";
 
 export const Header = () => {
@@ -15,22 +14,10 @@ export const Header = () => {
   const {
     state: { isAuth, user },
   } = useAuth();
-  const { showToast } = useToast();
-  const navigate = useNavigate();
-
   const {
     videoDispatch,
   } = useVideos();
   const { FILTER_BY_SEARCH } = videosActions;
-
-  const logoutHandler = () => {
-    // localStorage.removeItem("login");
-    // localStorage.removeItem("user");
-    // localStorage.removeItem("signup");
-    localStorage.clear();
-    navigate(0);
-    showToast("Logged Out!", "success");
-  };
 
   return (
     <div className="header">
@@ -70,15 +57,15 @@ export const Header = () => {
       </Link>
 
       {isAuth ? (
-        <div className="header__icons">
+        <Link to="/userProfile" className="header__icons">
           <span className="header__user">
             {user?.firstName}
             <FaAngleRight size={22} />
           </span>
-          <button className="header__logout" onClick={logoutHandler}>
+          {/* <button className="header__logout" onClick={logoutHandler}>
             LOGOUT
-          </button>
-        </div>
+          </button> */}
+        </Link>
       ) : (
         <Link to="/login">
           <div className="header__icons">
