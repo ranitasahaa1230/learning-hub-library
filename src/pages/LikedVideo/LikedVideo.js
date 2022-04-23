@@ -13,7 +13,7 @@ export const LikedVideo = () => {
 
   return (
     <div className="app__container">
-    {/* <Sidebar/> */}
+    <Sidebar/>
     <Container fluid className="app__main">
       <div className="play__section">
         {loading ? (
