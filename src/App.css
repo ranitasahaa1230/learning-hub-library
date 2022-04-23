@@ -28,7 +28,7 @@ body {
   --bg-code: #fafafa;
   --black-bg: #000814;
   --highlight-color: #007fff;
-  --primary-color: #141319;
+  --primary-color: #0d1117;
   --borders-color: rgb(149, 54, 238);
   --shadow-color: #370617;
   --accent-color: #606060dc;
@@ -38,10 +38,12 @@ body {
   --logo-color: #580aff;
   --wishlist: #ae2012;
   --secondary-color: #571089;
+  --navbar-primary-color:#272b33;
 }
 
 .dark__mode {
-  --primary-color: #141319;
+  --primary-color: #0a0c10;
+  /* --navbar-primary-color:#272b33; */
   --bg-code: #fafafa;
   --black-bg: #000814;
   --borders-color: rgb(149, 54, 238);
@@ -50,6 +52,7 @@ body {
 }
 
 .light__mode {
+  /* --navbar-primary-color:#fafafa; */
   --primary-color: #ffffff;
   --bg-code: #000814;
   --black-bg: #fafafa;

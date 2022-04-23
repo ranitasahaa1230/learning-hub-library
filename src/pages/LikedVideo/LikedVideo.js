@@ -1,7 +1,7 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Loader, Sidebar, VideoCard } from "../../components";
+import { HorizontalCard, Loader, Sidebar } from "../../components";
 import { useVideos } from "../../contexts";
 import "./LikedVideo.css";
 
@@ -27,10 +27,12 @@ export const LikedVideo = () => {
               </span>
             </h3>
 
-            <ul className="video__likes">
+            <Row>
               {isLikedVideo ? (
                 likedVideos.map((video) => (
-                  <VideoCard video={video}/>
+                  <Col lg={4} md={6}>
+                  <HorizontalCard video={video}/>
+                  </Col>
                 ))
               ) : (
                 <div className="liked__list">
@@ -42,7 +44,7 @@ export const LikedVideo = () => {
                   </Link>
                 </div>
               )}
-            </ul>
+            </Row>
           </div>
         )}
       </div>

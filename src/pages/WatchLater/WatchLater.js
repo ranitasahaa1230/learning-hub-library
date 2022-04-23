@@ -1,9 +1,8 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Loader, Sidebar, VideoCard } from "../../components";
+import { HorizontalCard, Loader, Sidebar } from "../../components";
 import { useVideos } from "../../contexts";
-import "./WatchLater.css";
 
 export const WatchLater = () => {
   const {
@@ -13,39 +12,43 @@ export const WatchLater = () => {
 
   return (
     <div className="app__container">
-    <Sidebar/>
+      <Sidebar />
       <Container fluid className="app__main">
-      <div className="play__section">
-        {loading ? (
-          <Loader/>
-        ) : (
-          <div>
-            <h3 className="video__heading">
-              Watch Later Video{" "}
-              <span className="video__desc">
-                {isInWatchLaterVideo && `(${watchLater.length} videos)`}
-              </span>
-            </h3>
+        <div className="play__section">
+          {loading ? (
+            <Loader />
+          ) : (
+            <div>
+              <h3 className="video__heading">
+                Watch Later Video{" "}
+                <span className="video__desc">
+                  {isInWatchLaterVideo && `(${watchLater.length} videos)`}
+                </span>
+              </h3>
 
-            <ul className="video__likes">
-              {isInWatchLaterVideo ? (
-                watchLater.map((video) => (
-                  <VideoCard video={video}/>
-                ))
-              ) : (
-                <div className="liked__list">
-                  <div className="empty-list">
-                  Looks like you haven't added anything yet in Watch Later.
+              <Row>
+                {isInWatchLaterVideo ? (
+                  watchLater.map((video) => (
+                    <Col lg={4} md={6}>
+                      <HorizontalCard video={video} />
+                    </Col>
+                  ))
+                ) : (
+                  <div className="liked__list">
+                    <div className="empty-list">
+                      Looks like you haven't added anything yet in Watch Later.
+                    </div>
+                    <Link to="/" className="continue">
+                      <button className="liked__videos">
+                        Start Adding Now
+                      </button>
+                    </Link>
                   </div>
-                  <Link to="/" className="continue">
-                    <button className="liked__videos">Start Adding Now</button>
-                  </Link>
-                </div>
-              )}
-            </ul>
-          </div>
-        )}
-      </div>
+                )}
+              </Row>
+            </div>
+          )}
+        </div>
       </Container>
     </div>
   );

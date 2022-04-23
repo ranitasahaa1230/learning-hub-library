@@ -18,6 +18,7 @@ const VideoProvider = ({ children }) => {
     videos: [],
     likedVideos:[],
     watchLater:[],
+    history: [],
     error: "",
     selectedCategory: "all",
     searchQuery: "",
