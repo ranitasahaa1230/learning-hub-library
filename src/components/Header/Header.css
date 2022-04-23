@@ -146,7 +146,7 @@
   background: var(--highlight-color);
 }
 
-span.font__icons{
+span.font__icons {
   margin-right: 0;
 }
 
@@ -157,6 +157,7 @@ span.font__icons{
   .header__signup {
     display: none;
   }
+
   .header__icons .header__logout {
     right: 5%;
   }

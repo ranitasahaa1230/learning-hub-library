@@ -45,7 +45,7 @@ export const HorizontalCard = ({ video }) => {
         {pathname === "/liked-videos" && (
           <div className="ellipsis">
             <i
-              className="fa-solid fa-trash delete__icon"
+              className="fa-solid fa-delete-left delete__icon"
               onClick={removeFromLikedVideo}
             ></i>
           </div>
@@ -54,16 +54,16 @@ export const HorizontalCard = ({ video }) => {
         {pathname === "/watch-later" && (
           <div className="ellipsis">
             <i
-              className="fa-solid fa-trash delete__icon"
+              className="fa-solid fa-delete-left delete__icon"
               onClick={removeFromWatchLaterVideo}
             ></i>
           </div>
         )}
 
         {pathname === "/history" && (
-          <div className="ellipsis">
+          <div className="ellipsis ellipsis__flex">
             <i
-              className="fa-solid fa-trash delete__icon"
+              className="fa-solid fa-delete-left delete__icon"
               onClick={removeFromHistoryVideo}
             ></i>
           </div>

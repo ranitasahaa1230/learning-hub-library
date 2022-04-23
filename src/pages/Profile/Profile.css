@@ -56,3 +56,21 @@
 .logout__btn:hover{
     opacity: 0.9;
 }
+
+@media (max-width: 645px) {
+    .box__page{
+        width: 20rem;
+    }
+  }
+
+  @media (max-width: 378px) {
+    .box__page{
+        width: 15rem;
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+    .label__block__details,.account__profile{
+        font-size: 1rem;
+    }
+  }
+  

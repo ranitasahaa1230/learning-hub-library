@@ -37,7 +37,7 @@ export const Header = () => {
       </div>
 
       <form>
-        <input type="text" placeholder="Search" 
+        <input type="text" placeholder="Search for Videos" 
         onChange={(e) =>videoDispatch({ type: FILTER_BY_SEARCH, payload: e.target.value })}/>
         <button type="submit">
           <AiOutlineSearch size={22} />
@@ -62,9 +62,9 @@ export const Header = () => {
             {user?.firstName}
             <FaAngleRight size={22} />
           </span>
-          {/* <button className="header__logout" onClick={logoutHandler}>
-            LOGOUT
-          </button> */}
+          <button className="header__logout">
+            View Profile
+          </button>
         </Link>
       ) : (
         <Link to="/login">
