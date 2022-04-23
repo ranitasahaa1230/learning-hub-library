@@ -9,7 +9,7 @@ import {
   MdPlaylistAdd,
 } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth, useCategory, useVideos } from "../../contexts";
+import { useCategory} from "../../contexts";
 import { useToast } from "../../hooks";
 import "./Sidebar.css";
 

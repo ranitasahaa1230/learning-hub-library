@@ -32,7 +32,7 @@ export const SingleVideoPage = () => {
     videoDispatch,
   } = useVideos();
   const {
-    state: { user, encodedToken},
+    state: { user, encodedToken },
   } = useAuth();
 
   useDocumentTitle("Single Video Details");
@@ -65,7 +65,7 @@ export const SingleVideoPage = () => {
         try {
           // const {
           //   data: { video },
-          // } = 
+          // } =
           await axios.post(
             "/api/user/history",
             { video },
@@ -73,10 +73,11 @@ export const SingleVideoPage = () => {
           );
           videoDispatch({ type: ADD_TO_HISTORY, payload: video });
         } catch (error) {
-          console.log("error",error.description);
+          console.log("error", error.description);
         }
       })();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, video]);
 
   const handleLikeHandler = () => {
