@@ -9,7 +9,7 @@ import {
   MdPlaylistAdd,
 } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useCategory } from "../../contexts";
+import { useAuth, useCategory } from "../../contexts";
 import { useToast } from "../../hooks";
 import "./Sidebar.css";
 
@@ -17,6 +17,9 @@ export const Sidebar = () => {
   const { sidebars, handleToggleSidebar } = useCategory();
   const { showToast } = useToast();
   const navigate = useNavigate();
+  const {
+    state: { isAuth },
+  } = useAuth();
 
   const logoutHandler = () => {
     // localStorage.removeItem("login");
@@ -71,12 +74,16 @@ export const Sidebar = () => {
       </NavLink>
       <hr />
 
-      <li onClick={logoutHandler}>
-        <MdExitToApp size={25} />
-        <span>Log Out</span>
-      </li>
+      {isAuth && (
+        <>
+          <li onClick={logoutHandler}>
+            <MdExitToApp size={25} />
+            <span>Log Out</span>
+          </li>
 
-      <hr />
+          <hr />
+        </>
+      )}
     </aside>
   );
 };

@@ -97,12 +97,9 @@ export const SingleVideoPage = () => {
       navigate("/login");
     } else {
       if (!videoInWatchLater) {
-        console.log("Liked 00", _id);
         addToWatchLater(video, videoDispatch, showToast);
-        console.log("Liked", video);
       } else {
         removeFromWatchLater(_id, videoDispatch, showToast);
-        console.log("DisLiked", video);
       }
     }
   };
@@ -176,7 +173,7 @@ export const SingleVideoPage = () => {
                 <div className="video__features">
                   <li>
                     <MdPlaylistAdd size={25} />
-                    <span className="video__space">Save To Playlist</span>
+                    <span className="video__space">Add To Playlist</span>
                   </li>
                 </div>
               </div>
