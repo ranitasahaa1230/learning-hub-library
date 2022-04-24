@@ -10,6 +10,7 @@ import {
   SignUp,
   WatchLater,
   SingleVideoPage,
+  Profile,
 } from "./pages";
 import Mockman from "mockman-js";
 import { useTheme } from "./contexts";
@@ -56,6 +57,14 @@ function App() {
           element={
             <RequireAuth>
               <LikedVideo />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/userProfile"
+          element={
+            <RequireAuth>
+              <Profile />
             </RequireAuth>
           }
         />

@@ -10,7 +10,7 @@
   top: 10vh;
   left: 0;
   height: 90vh;
-  /* background: var(--primary-color); */
+  /* background: var(--navbar-primary-color); */
 }
 
 a {
@@ -23,7 +23,7 @@ a {
   align-items: center;
   color: var(--bg-code);
   padding: 0.6rem 1.5rem;
-  margin: 0.2rem 0;
+  margin: 0.25rem 0;
   cursor: pointer;
 }
 .sidebar li span {
@@ -35,6 +35,11 @@ a {
 
 .sidebar li:hover {
   background-color: var(--borders-color);
+  color: var(--bg-white);
+}
+
+.sidebar a.active li{
+  background-color: var(--black-primary);
   color: var(--bg-white);
 }
 

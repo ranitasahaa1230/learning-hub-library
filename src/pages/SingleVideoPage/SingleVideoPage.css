@@ -75,7 +75,7 @@
   transition: transform 0.2s ease-in;
   color: var(--bg-white);
   outline: none;
-  background: gray;
+  background:var(--black-primary);
   border: 0;
   margin: 0.5rem 1rem 0.6rem 0;
 }

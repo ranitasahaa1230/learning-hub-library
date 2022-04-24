@@ -9,25 +9,26 @@
 }
 .video__heading {
   color: var(--bg-code);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .video__desc {
-  color:var(--border-color);
+  color: var(--count-desc);
   font-weight: bolder;
+    /* color:var(--highlight-color); */
 }
 .liked__list {
-  text-align: center;
+  display: flex;
   flex-direction: column;
+  place-items: center;
+  margin: 2rem auto;
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--bg-code);
 }
 .liked__videos {
- width: 20rem;
-  display: block;
   cursor: pointer;
   padding: 6.8px 2rem;
   margin: 0.6rem 1rem;
@@ -40,13 +41,4 @@
 }
 .liked__videos:hover{
     opacity: 0.9;
-}
-
-.video__likes {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  justify-content: center;
-  margin: 2rem;
 }

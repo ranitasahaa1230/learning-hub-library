@@ -1,0 +1,20 @@
+.ellipsis__trash{
+font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+.ellipsis__text{
+    font-size: 1.38rem;
+    color: var(--bg-code);
+}
+.ellipsis__trash i{
+    margin-right: 2rem;
+    font-size: 1.1rem;
+    color: var(--trash-color);
+}
+
+.ellipsis__text:hover{
+    border-bottom: 3px solid var(--bg-code);
+}

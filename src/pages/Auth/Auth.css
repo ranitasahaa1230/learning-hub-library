@@ -59,14 +59,15 @@
 
 .password-label::after {
   content: "*";
-  color: var(--wishlist);
+  color: var(--trash-color);
 }
+
 .submit-loginbtns {
   width: 22rem;
   display: block;
   cursor: pointer;
   padding: 6.8px 2rem;
-  margin: 1rem 1rem !important;
+  margin: 0.8rem 1rem !important;
   background: var(--border-color);
   border: 0;
   outline: none;
@@ -79,7 +80,7 @@
   display: block;
   cursor: pointer;
   padding: 3px 3rem;
-  margin: 1rem 1rem;
+  margin: 0.8rem 1rem;
   border: 2px solid var(--border-color);
   outline: none;
   color: var(--border-color);
@@ -153,7 +154,7 @@ span.check-psswd {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--wishlist);
+  color: var(--trash-color);
 }
 .login-error-msg i {
   font-size: 1.1rem;
@@ -178,3 +179,15 @@ span.check-psswd {
     margin: auto;
   }
 }
+
+@media (max-width: 525px) {
+  .form-box {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .submit-loginbtn,
+  .submit-loginbtns {
+    width: 14rem;
+  }
+}
+

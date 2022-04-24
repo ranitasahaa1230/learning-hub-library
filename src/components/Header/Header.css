@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
+  /* background-color: var(--navbar-primary-color); */
   background-color: var(--primary-color);
   height: 10vh;
   width: 100%;
@@ -145,7 +146,7 @@
   background: var(--highlight-color);
 }
 
-span.font__icons{
+span.font__icons {
   margin-right: 0;
 }
 
@@ -156,6 +157,7 @@ span.font__icons{
   .header__signup {
     display: none;
   }
+
   .header__icons .header__logout {
     right: 5%;
   }
