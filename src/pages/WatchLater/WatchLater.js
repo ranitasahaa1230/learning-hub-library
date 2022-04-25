@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HorizontalCard, Loader, Sidebar } from "../../components";
-import { useVideos } from "../../contexts";
+import { usePlaylist } from "../../contexts";
 
 export const WatchLater = () => {
   const {
-    videoState: { watchLater, loading },
-  } = useVideos();
+    playListState: { watchLater, loading },
+  } = usePlaylist();
   const isInWatchLaterVideo = watchLater.length > 0;
 
   return (

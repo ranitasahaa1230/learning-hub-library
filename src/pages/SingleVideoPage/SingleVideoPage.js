@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useToast, useDocumentTitle } from "../../hooks";
 import "./SingleVideoPage.css";
-import { useAuth, useVideos } from "../../contexts";
+import { useAuth, usePlaylist } from "../../contexts";
 import {
   isInHistoryVideo,
   isInLikedVideo,
@@ -28,9 +28,9 @@ export const SingleVideoPage = () => {
   const { videoId } = useParams();
   const { showToast } = useToast();
   const {
-    videoState: { likedVideos, watchLater, history },
-    videoDispatch,
-  } = useVideos();
+    playListState: { likedVideos, watchLater, history },
+    playListDispatch,
+  } = usePlaylist();
   const {
     state: { user, encodedToken },
   } = useAuth();
@@ -71,7 +71,7 @@ export const SingleVideoPage = () => {
             { video },
             { headers: { authorization: encodedToken } }
           );
-          videoDispatch({ type: ADD_TO_HISTORY, payload: video });
+          playListDispatch({ type: ADD_TO_HISTORY, payload: video });
         } catch (error) {
           console.log("error", error.description);
         }
@@ -85,9 +85,9 @@ export const SingleVideoPage = () => {
       navigate("/login");
     } else {
       if (!videoInLiked) {
-        addToLikes(video, videoDispatch, showToast);
+        addToLikes(video, playListDispatch, showToast);
       } else {
-        removeFromLikes(_id, videoDispatch, showToast);
+        removeFromLikes(_id, playListDispatch, showToast);
       }
     }
   };
@@ -97,9 +97,9 @@ export const SingleVideoPage = () => {
       navigate("/login");
     } else {
       if (!videoInWatchLater) {
-        addToWatchLater(video, videoDispatch, showToast);
+        addToWatchLater(video, playListDispatch, showToast);
       } else {
-        removeFromWatchLater(_id, videoDispatch, showToast);
+        removeFromWatchLater(_id, playListDispatch, showToast);
       }
     }
   };
