@@ -2,21 +2,21 @@ import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { HorizontalCard, Loader, Sidebar } from "../../components";
-import { useVideos } from "../../contexts";
+import { usePlaylist } from "../../contexts";
 import { useToast } from "../../hooks";
 import { clearAllHistory } from "../../services";
 import "./History.css";
 
 export const History = () => {
   const {
-    videoState: { history, loading },videoDispatch,
-  } = useVideos();
+    playListState: { history, loading },playListDispatch,
+  } = usePlaylist();
   const navigate=useNavigate();
   const { showToast } = useToast();
   const isInHistory = history.length > 0;
 
   const removeAllHistoryVideo=()=>{
-    clearAllHistory(videoDispatch, navigate, showToast);
+    clearAllHistory(playListDispatch, navigate, showToast);
   }
   return (
     <div className="app__container">
