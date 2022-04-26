@@ -14,11 +14,12 @@ import {
 } from "../../utlities";
 import {
   addToLikes,
+  addToPlaylist,
   addToWatchLater,
   removeFromLikes,
   removeFromWatchLater,
 } from "../../services";
-import { Loader, Sidebar } from "../../components";
+import { Loader, Modal, Sidebar } from "../../components";
 import { ADD_TO_HISTORY } from "../../reducers";
 
 export const SingleVideoPage = () => {
@@ -27,6 +28,7 @@ export const SingleVideoPage = () => {
   const navigate = useNavigate();
   const { videoId } = useParams();
   const { showToast } = useToast();
+  const [showModal, setShowModal] = useState(false);
   const {
     playListState: { likedVideos, watchLater, history },
     playListDispatch,
@@ -42,6 +44,10 @@ export const SingleVideoPage = () => {
   const videoInLiked = isInLikedVideo(likedVideos, _id);
   const videoInWatchLater = isInWatchLaterVideo(watchLater, _id);
   const videoInHistory = isInHistoryVideo(history, _id);
+
+  const modalIcon = () => {
+    setShowModal(false);
+  };
 
   useEffect(() => {
     (async () => {
@@ -101,6 +107,14 @@ export const SingleVideoPage = () => {
       } else {
         removeFromWatchLater(_id, playListDispatch, showToast);
       }
+    }
+  };
+
+  const handleSaveToPlaylist = () => {
+    if (!user) {
+      navigate("/login");
+    } else {
+      setShowModal(true);
     }
   };
 
@@ -170,11 +184,13 @@ export const SingleVideoPage = () => {
                     </span>
                   </li>
                 </div>
-                <div className="video__features">
+                <div className="video__features" onClick={handleSaveToPlaylist}>
                   <li>
                     <MdPlaylistAdd size={25} />
-                    <span className="video__space">Add To Playlist</span>
+                    <span className="video__space">Save To PlayList</span>
                   </li>
+
+                  {showModal && <Modal video={video} modalIcon={modalIcon} />}
                 </div>
               </div>
               <div className="desc__video">{description}</div>

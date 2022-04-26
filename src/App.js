@@ -11,6 +11,7 @@ import {
   WatchLater,
   SingleVideoPage,
   Profile,
+  PlaylistPage,
 } from "./pages";
 import Mockman from "mockman-js";
 import { useTheme } from "./contexts";
@@ -65,6 +66,14 @@ function App() {
           element={
             <RequireAuth>
               <Profile />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/playlist/:playListId"
+          element={
+            <RequireAuth>
+              <PlaylistPage />
             </RequireAuth>
           }
         />
