@@ -19,7 +19,7 @@ export const VideoCard = ({ video }) => {
   // const [inputText, setInputText] = useState("");
   // const [list, setList] = useState([]);
   const {
-    playListState: { watchLater, playLists },
+    playListState: { watchLater },
     playListDispatch,
   } = usePlaylist();
 

@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import { usePlaylist } from "../../contexts";
 import { useToast } from "../../hooks";
 import { playListModalReducer } from "../../reducers";
@@ -13,7 +13,7 @@ export const Modal = ({video, modalIcon}) => {
     playListDispatch,
   } = usePlaylist();
 
-  const [{ loading, showInput, playListName }, playListModalDispatch] =
+  const [{ loading, playListName }, playListModalDispatch] =
     useReducer(playListModalReducer, {
       loading: false,
       showInput: false,

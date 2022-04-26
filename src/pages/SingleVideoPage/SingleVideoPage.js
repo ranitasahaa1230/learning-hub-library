@@ -14,7 +14,6 @@ import {
 } from "../../utlities";
 import {
   addToLikes,
-  addToPlaylist,
   addToWatchLater,
   removeFromLikes,
   removeFromWatchLater,
