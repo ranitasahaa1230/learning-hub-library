@@ -1,4 +1,4 @@
-import { LOADING, RESET_MODAL_STATES, SHOW_INPUT, SET_NEW_PLAYLIST_NAME } from "./constant";
+import { LOADING, RESET, SHOW_INPUT, SET_NEW_PLAYLIST_NAME } from "./constant";
 
 const playListModalReducer = (playlistModalState, action) => {
   switch (action.type) {
