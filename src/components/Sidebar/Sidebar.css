@@ -39,8 +39,9 @@ a {
 }
 
 .sidebar a.active li{
-  background-color: var(--black-primary);
+  background-color: var(--accent-color);
   color: var(--bg-white);
+  border-color: var(--bg-white);  
 }
 
 hr {

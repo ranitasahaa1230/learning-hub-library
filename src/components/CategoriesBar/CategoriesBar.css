@@ -6,7 +6,6 @@
   overflow-x: scroll;
   margin: 0.8rem 0;
   color: var(--bg-code);
-  /* padding-top: 3.2rem; */
 }
 .categoriesBar::-webkit-scrollbar {
   width: 0px;
@@ -24,14 +23,14 @@
   outline: none;
 }
 .categoriesBar span:hover {
-  background-color: var(--borders-color);
-  border: 0;
-  outline: none;
+  background-color: var(--accent-color);
+  border-color: var(--bg-white);  
   color: var(--bg-white);
 }
 
 .categoriesBar .active {
   color: var(--bg-white);
-  background-color: var(--accent-color);
-  border-color: var(--bg-white);
+  background-color: var(--borders-color);
+  border: 0;
+  outline: none;
 }

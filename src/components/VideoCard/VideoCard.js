@@ -30,11 +30,8 @@ export const VideoCard = ({ video }) => {
   const videoInWatchLater = isInWatchLaterVideo(watchLater, _id);
 
   const handleDisplayOptions = () => {
-    if (!user) {
-      navigate("/login");
-    } else {
       setDisplayOptions(true);
-    }
+    
   };
 
   const modalIcon = () => {
@@ -47,7 +44,7 @@ export const VideoCard = ({ video }) => {
 
   const handleWatchLater = () => {
     if (!user) {
-      navigate("/login");
+      showToast("Please Login to continue!", "error");
     } else {
       if (!videoInWatchLater) {
         addToWatchLater(video, playListDispatch, showToast);
@@ -58,8 +55,12 @@ export const VideoCard = ({ video }) => {
   };
 
   const handleAddToPlaylist = () => {
+    if (!user) {
+      showToast("Please Login to continue!", "error");
+    } else {
     setShowModal(true);
     setDisplayOptions(false);
+    }
   };
 
   return (

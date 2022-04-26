@@ -87,7 +87,7 @@ export const SingleVideoPage = () => {
 
   const handleLikeHandler = () => {
     if (!user) {
-      navigate("/login");
+      showToast("Please Login to continue!", "error");
     } else {
       if (!videoInLiked) {
         addToLikes(video, playListDispatch, showToast);
@@ -99,7 +99,7 @@ export const SingleVideoPage = () => {
 
   const handleWatchLater = () => {
     if (!user) {
-      navigate("/login");
+      showToast("Please Login to continue!", "error");
     } else {
       if (!videoInWatchLater) {
         addToWatchLater(video, playListDispatch, showToast);
@@ -111,7 +111,7 @@ export const SingleVideoPage = () => {
 
   const handleSaveToPlaylist = () => {
     if (!user) {
-      navigate("/login");
+      showToast("Please Login to continue!", "error");
     } else {
       setShowModal(true);
     }
@@ -144,7 +144,7 @@ export const SingleVideoPage = () => {
                     <div className="span__views">
                       <span>
                         <b>
-                          <AiFillEye />{" "}
+                          <AiFillEye size={20}/>{" "}
                         </b>{" "}
                         {views} Views{" "}
                       </span>{" "}
