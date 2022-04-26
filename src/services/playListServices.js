@@ -27,7 +27,7 @@ const createToPlaylist = async (
       }
     );
     playListDispatch({ type: SET_PLAYLIST, payload: playlists });
-    playListModalDispatch({ type: "RESET_MODAL_STATES" });
+    playListModalDispatch({ type: RESET });
   } catch (error) {
     console.log(error);
   }
