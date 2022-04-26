@@ -11,7 +11,7 @@ const playListModalReducer = (playlistModalState, action) => {
     case SET_NEW_PLAYLIST_NAME:
       return { ...playlistModalState, playListName: action.payload };
     
-      case RESET_MODAL_STATES:
+      case RESET:
       return {
         ...playlistModalState,
         loading: false,
