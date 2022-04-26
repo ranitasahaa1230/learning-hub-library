@@ -3,7 +3,7 @@ import { AiFillEye } from "react-icons/ai";
 import { Container } from "react-bootstrap";
 import { MdOutlineWatchLater, MdThumbUp, MdPlaylistAdd } from "react-icons/md";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useToast, useDocumentTitle } from "../../hooks";
 import "./SingleVideoPage.css";
 import { useAuth, usePlaylist } from "../../contexts";
@@ -24,7 +24,6 @@ import { ADD_TO_HISTORY } from "../../reducers";
 export const SingleVideoPage = () => {
   const [loader, setLoader] = useState(false);
   const [video, setVideo] = useState(null);
-  const navigate = useNavigate();
   const { videoId } = useParams();
   const { showToast } = useToast();
   const [showModal, setShowModal] = useState(false);
