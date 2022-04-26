@@ -4,6 +4,7 @@ import {
   ADD_TO_PLAYLIST,
   DELETE_PLAYLIST,
   REMOVE_FROM_PLAYLIST,
+  RESET,
 } from "../reducers";
 
 const createToPlaylist = async (
