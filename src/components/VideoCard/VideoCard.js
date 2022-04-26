@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { MdOutlineWatchLater, MdThumbUp, MdPlaylistAdd } from "react-icons/md";
+import { MdOutlineWatchLater, MdPlaylistAdd } from "react-icons/md";
 import "./VideoCard.css";
-import { useAuth, useVideos } from "../../contexts";
+import { useAuth, usePlaylist } from "../../contexts";
 import { isInWatchLaterVideo } from "../../utlities";
 import { addToWatchLater, removeFromWatchLater } from "../../services";
 import { useToast } from "../../hooks";
+import { Modal } from "../../components";
 
 export const VideoCard = ({ video }) => {
   const { _id, title, creator, uploaded, thumbnail, views, time } = video;
   const navigate = useNavigate();
   const [displayOptions, setDisplayOptions] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const { showToast } = useToast();
+
+  // const [inputText, setInputText] = useState("");
+  // const [list, setList] = useState([]);
   const {
-    videoState: { watchLater },
-    videoDispatch,
-  } = useVideos();
+    playListState: { watchLater, playLists },
+    playListDispatch,
+  } = usePlaylist();
 
   const {
     state: { user },
@@ -25,35 +30,37 @@ export const VideoCard = ({ video }) => {
   const videoInWatchLater = isInWatchLaterVideo(watchLater, _id);
 
   const handleDisplayOptions = () => {
-    if(!user){
-      navigate('/login');
-    }else{
-    setDisplayOptions(true);
+    if (!user) {
+      navigate("/login");
+    } else {
+      setDisplayOptions(true);
     }
   };
 
-  const deleteIcon=()=>{
+  const modalIcon = () => {
+    setShowModal(false);
+  };
+
+  const deleteIcon = () => {
     setDisplayOptions(false);
-  }
+  };
 
   const handleWatchLater = () => {
     if (!user) {
       navigate("/login");
     } else {
       if (!videoInWatchLater) {
-        addToWatchLater(video, videoDispatch, showToast);
+        addToWatchLater(video, playListDispatch, showToast);
       } else {
-        removeFromWatchLater(_id, videoDispatch, showToast);
+        removeFromWatchLater(_id, playListDispatch, showToast);
       }
     }
   };
 
-  const handleAddToPlaylist=()=>{
-    // handleShowModal(true);
-    // setShowOptions(false);
-    // setClickedVideo(video);
+  const handleAddToPlaylist = () => {
+    setShowModal(true);
     setDisplayOptions(false);
-  }
+  };
 
   return (
     <div className="video" key={_id}>
@@ -90,6 +97,8 @@ export const VideoCard = ({ video }) => {
             </div>
           </div>
         )}
+
+        {showModal && <Modal video={video} modalIcon={modalIcon} />}
       </div>
 
       <h3 className="video__title">{creator}</h3>

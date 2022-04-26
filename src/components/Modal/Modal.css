@@ -1,0 +1,17 @@
+.modal__properties {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  right: 5%;
+  top: 1%;
+  background: linear-gradient(
+    to right,
+    #5ac8fa,
+    #9163cb
+      );
+  padding: 0.8rem 0.5rem;
+  border-radius: 1.2rem;
+  text-align: center;
+}
