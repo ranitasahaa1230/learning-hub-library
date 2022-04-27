@@ -106,3 +106,7 @@
     margin: 0.4rem;
   }
 }
+
+.modal__videos{
+   position: relative;
+}

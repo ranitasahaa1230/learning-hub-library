@@ -10,7 +10,7 @@ import {
 import { isInPlaylistVideo } from "../../utlities";
 import "./Modal.css";
 
-export const Modal = ({ video, modalIcon }) => {
+export const Modal = ({ video, setShowModal }) => {
   const { showToast } = useToast();
   const {
     playListState: { playLists },
@@ -58,7 +58,7 @@ export const Modal = ({ video, modalIcon }) => {
       <form className="modal__shows" onSubmit={handleFormSubmit}>
         <div className="modal__flex">
           <div className="bold__save">Save to:</div>
-          <span className="delete__modal" onClick={modalIcon}>
+          <span className="delete__modal" onClick={()=>setShowModal(prev=>!prev)}>
             <i className="fa-solid fa-xmark"></i>
           </span>
         </div>

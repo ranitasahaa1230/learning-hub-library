@@ -4,9 +4,10 @@
   flex-direction: column;
   position: absolute;
   z-index: 2;
-  right: 4%;
-  top: 75%;
+  right: 3%;
+  top: 85%;
   background: var(--color);
+  border:1.5px solid var(--bg-white);
   padding: 0.4rem 0.68rem;
   border-radius: 1.2rem;
   text-align: center;

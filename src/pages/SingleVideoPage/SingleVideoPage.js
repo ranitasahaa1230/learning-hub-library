@@ -43,10 +43,6 @@ export const SingleVideoPage = () => {
   const videoInWatchLater = isInWatchLaterVideo(watchLater, _id);
   const videoInHistory = isInHistoryVideo(history, _id);
 
-  const modalIcon = () => {
-    setShowModal(false);
-  };
-
   useEffect(() => {
     (async () => {
       try {
@@ -182,13 +178,13 @@ export const SingleVideoPage = () => {
                     </span>
                   </li>
                 </div>
-                <div className="video__features" onClick={handleSaveToPlaylist}>
+                <div className="video__features modal__videos" onClick={handleSaveToPlaylist}>
                   <li>
                     <MdPlaylistAdd size={25} />
                     <span className="video__space">Save To PlayList</span>
                   </li>
 
-                  {showModal && <Modal video={video} modalIcon={modalIcon} />}
+                  {showModal && <Modal video={video} setShowModal={setShowModal}/>}
                 </div>
               </div>
               <div className="desc__video">{description}</div>

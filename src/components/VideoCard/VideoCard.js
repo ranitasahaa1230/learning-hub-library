@@ -21,7 +21,7 @@ export const VideoCard = ({ video }) => {
   } = usePlaylist();
 
   const {
-    state: { user },
+    state: { encodedToken },
   } = useAuth();
 
   const videoInWatchLater = isInWatchLaterVideo(watchLater, _id);
@@ -31,16 +31,12 @@ export const VideoCard = ({ video }) => {
     
   };
 
-  const modalIcon = () => {
-    setShowModal(false);
-  };
-
   const deleteIcon = () => {
     setDisplayOptions(false);
   };
 
   const handleWatchLater = () => {
-    if (!user) {
+    if (!encodedToken) {
       showToast("Please Login to continue!", "error");
     } else {
       if (!videoInWatchLater) {
@@ -52,7 +48,7 @@ export const VideoCard = ({ video }) => {
   };
 
   const handleAddToPlaylist = () => {
-    if (!user) {
+    if (!encodedToken) {
       showToast("Please Login to continue!", "error");
     } else {
     setShowModal(true);
@@ -96,7 +92,7 @@ export const VideoCard = ({ video }) => {
           </div>
         )}
 
-        {showModal && <Modal video={video} modalIcon={modalIcon} />}
+        {showModal && <Modal video={video} setShowModal={setShowModal} />}
       </div>
 
       <h3 className="video__title">{creator}</h3>
