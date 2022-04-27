@@ -37,7 +37,7 @@ export const Header = () => {
       </div>
 
       <form>
-        <input type="text" placeholder="Search for Videos" 
+        <input type="text" placeholder="Search for your Favorite Videos..." 
         onChange={(e) =>videoDispatch({ type: FILTER_BY_SEARCH, payload: e.target.value })}/>
         <button type="submit">
           <AiOutlineSearch size={22} />

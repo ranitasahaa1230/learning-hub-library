@@ -38,7 +38,7 @@ const playListReducer = (playListState, action) => {
       case ADD_TO_HISTORY:
         return {
           ...playListState,
-          history: playListState.history.concat(action.payload),
+          history: playListState.history.concat(action.payload).reverse(),
         };
   
       case REMOVE_FROM_HISTORY:
