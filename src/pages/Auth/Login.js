@@ -32,7 +32,6 @@ export function Login() {
       } else {
         navigate("/");
       }
-      // navigate(location.state?.from?.pathname || "/",{replace:true});
       showToast("Logged In!", "success");
     } catch (error) {
       showToast(error.response.data.errors[0], "error");

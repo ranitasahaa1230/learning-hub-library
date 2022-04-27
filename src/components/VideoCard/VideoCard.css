@@ -79,7 +79,6 @@ li {
   position: absolute;
   top: 83%;
   right: -10%;
-  z-index: 999;
   width: max-content;
   background-color: var(--borders-color);
   border-radius: 0.5rem;
@@ -94,10 +93,12 @@ li {
   cursor: pointer;
   gap: 0.25rem;
 }
-
+.delete__modal{
+  color: var(--shadow-color);
+}
 .delete__option,.delete__modal{
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 1.13rem;
+  font-weight: 900;
 }
 span.delete__option:hover, .delete__modal:hover{
   color: var(--bg-black);
@@ -135,20 +136,25 @@ span.delete__option:hover, .delete__modal:hover{
 .list__input{
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding: 0.1rem 2.5rem;
 }
 .list__play{
-  text-align: center;
+  /* text-align: center; */
 }
 input[type="checkbox"]{
   margin:0.25rem;
   width: 1.18rem;
   height: 1.18rem;
   cursor: pointer;
-  border: 0;
-  outline: none;
+  border: var(--bg-white);
 }
-
+.input__title{
+  color: var(--bg-black);
+  font-weight: 580;
+}
+input:focus{
+  border: 2px solid var(--shadow-color);
+}
 span.list__span{
   font-size: 1.3rem;
   font-weight: 600;
@@ -157,8 +163,15 @@ span.list__span{
 
 .modal__flex{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  gap:1rem;
+  gap:0.1rem;
   padding: 0.1rem;
+}
+
+.bold__save{
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--bg-black);
+  padding: 0;
 }

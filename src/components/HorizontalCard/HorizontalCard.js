@@ -73,7 +73,7 @@ export const HorizontalCard = ({ video }) => {
       <div className="video__details">
         <span>
           <b>
-            <AiFillEye />{" "}
+            <AiFillEye size={18}/>{" "}
           </b>{" "}
           {views} Views{" "}
         </span>{" "}

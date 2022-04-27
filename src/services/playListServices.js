@@ -1,9 +1,38 @@
 import axios from "axios";
 import {
+  SET_PLAYLIST,
   ADD_TO_PLAYLIST,
   DELETE_PLAYLIST,
   REMOVE_FROM_PLAYLIST,
+  RESET,
 } from "../reducers";
+
+const createToPlaylist = async (
+  event,
+  playListName,
+  playListModalDispatch,
+  playListDispatch
+) => {
+  event.preventDefault();
+  try {
+    playListModalDispatch({ type: "LOADING", payload: true });
+    const {
+      data: { playlists },
+    } = await axios.post(
+      `/api/user/playlists`,
+      {
+        playlist: { title: playListName },
+      },
+      {
+        headers: { authorization: localStorage.getItem("token") },
+      }
+    );
+    playListDispatch({ type: SET_PLAYLIST, payload: playlists });
+    playListModalDispatch({ type: RESET });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const addToPlaylist = async (
   video,

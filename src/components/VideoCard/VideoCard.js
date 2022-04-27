@@ -15,9 +15,6 @@ export const VideoCard = ({ video }) => {
   const [displayOptions, setDisplayOptions] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { showToast } = useToast();
-
-  // const [inputText, setInputText] = useState("");
-  // const [list, setList] = useState([]);
   const {
     playListState: { watchLater },
     playListDispatch,
