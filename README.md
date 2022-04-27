@@ -14,7 +14,6 @@
 - [Live link](#live-link)
 - [Demo](#demo)
 - [Getting Started](#getting-started)
-- [Contibute](#contribute)
 - [Connect with me](#-connect-with-me)
 
 ## About
@@ -42,7 +41,7 @@
   - Can create a playlist and add a video in it
   - Can add video in watch later
 
-**Single Video Details**
+**Single Video Details Page**
 
 - After a user clicks on any video in video listing page, it will navigate to this page, where user can:
 
@@ -55,7 +54,7 @@
   **Playlist Management**
 
 - On this page user can view all the playlists.
-- On clicking on any one, it will that playlist, where user get option to:
+- On clicking on any one, it will show all the videos of that playlist, where user get option to:
   - Delete the playlist
   - Remove the particular video from playlist
 
@@ -65,7 +64,7 @@
 
 **Like video**
 
-- Users can like any video, if the video is already liked then the user can remove it from liked videos.
+- Users can like any video, if the video is already liked then the user can remove it from the liked videos.
 
 **History**
 
@@ -78,7 +77,7 @@
 
 ## Live link
 
-[Learning Hub](https://learning-hub-library.netlify.app/)
+Learning Hub(https://learning-hub-library.netlify.app/)
 
 ## Demo
 
@@ -94,16 +93,6 @@ $ cd learning-hub-library
 $ npm install
 $ npm start
 ```
-
-## Contribute!
-
-This project is meant to be open source! Do feel free to add bugs and fork the repo for contribution. Here's how you can contribute:
-
-- Fork the project repository
-- Clone your fork
-- Create a new branch with a proper feature name, in your local repo
-- Make changes, commit and push
-- Raise a Pull Request
 
 ### Liked the project? Do please ⭐ it :)
 
