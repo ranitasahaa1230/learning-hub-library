@@ -2,13 +2,13 @@ import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HorizontalCard, Loader, Sidebar } from "../../components";
-import { useVideos } from "../../contexts";
+import { usePlaylist } from "../../contexts";
 import "./LikedVideo.css";
 
 export const LikedVideo = () => {
   const {
-    videoState: { likedVideos, loading },
-  } = useVideos();
+    playListState: { likedVideos, loading },
+  } = usePlaylist();
   const isLikedVideo = likedVideos.length > 0;
 
   return (

@@ -28,7 +28,7 @@ export function Login() {
       localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("token", encodedToken);
       if (location.state !== null) {
-        navigate(location?.state?.from?.pathname);
+        navigate(location.state?.from?.pathname);
       } else {
         navigate("/");
       }

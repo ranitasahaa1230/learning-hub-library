@@ -1,14 +1,20 @@
 import React from "react";
+import { Sidebar, Loader } from "../../../components";
 import { Container, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { HorizontalCard, Loader, Sidebar } from "../../components";
-import { usePlaylist } from "../../contexts";
+import { useParams, Link } from "react-router-dom";
+import { getPlaylistById } from "../../../utlities";
+import { usePlaylist } from "../../../contexts";
+import { PlaylistCard } from "./PlaylistCard";
+import "./PlaylistPage.css";
 
-export const WatchLater = () => {
+export const PlaylistPage = () => {
+  const { playListId } = useParams();
   const {
-    playListState: { watchLater, loading },
+    playListState: { playLists, loading },
   } = usePlaylist();
-  const isInWatchLaterVideo = watchLater.length > 0;
+  const playlistVideo = getPlaylistById(playListId, playLists);
+  const { title, videos } = playlistVideo;
+  const isPlaylistFill = videos.length > 0;
 
   return (
     <div className="app__container">
@@ -20,23 +26,27 @@ export const WatchLater = () => {
           ) : (
             <div>
               <h3 className="video__heading">
-                Watch Later Video{" "}
+                {title}{" "}
                 <span className="video__desc">
-                  {isInWatchLaterVideo && `(${watchLater.length} videos)`}
+                  {isPlaylistFill && `(${videos.length} videos)`}
                 </span>
               </h3>
 
               <Row>
-                {isInWatchLaterVideo ? (
-                  watchLater.map((video) => (
+                {isPlaylistFill ? (
+                  videos.map((video) => (
                     <Col lg={4} md={6}>
-                      <HorizontalCard video={video} />
+                      <PlaylistCard
+                        key={video.id}
+                        video={video}
+                        listId={playListId}
+                      />
                     </Col>
                   ))
                 ) : (
                   <div className="liked__list">
                     <div className="empty-list">
-                      Looks like you haven't added anything yet in Watch Later.
+                      Looks like you haven't added anything in {title}.
                     </div>
                     <Link to="/" className="continue">
                       <button className="liked__videos">

@@ -32,12 +32,12 @@
 }
 
 .video__title {
-  margin-left: 3.8rem;
+  margin-left: 3.4rem;
   color: var(--bg-code);
   font-size: 1rem;
   font-weight: 590;
 }
-.bold__text{
+.bold__text {
   font-weight: 600;
   font-size: 1rem;
   color: var(--bg-code);
@@ -50,13 +50,14 @@
 .video__details {
   display: flex;
   align-items: center;
-  margin: 0.5rem 0 0 2.5rem;
+  margin: 0.5rem 0 0 1.2rem;
   padding-bottom: 0.6rem;
 }
 .video__channel {
   display: flex;
   align-items: center;
   margin: 0rem 0.8rem;
+  position: relative;
 }
 .video__channel img {
   width: 36px;
@@ -64,8 +65,113 @@
   border-radius: 50%;
   margin-right: 0.5rem;
 }
-.ellipsis{
+.ellipsis {
   margin-left: auto;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+li {
+  list-style: none;
+}
+
+.display__options {
+  position: absolute;
+  top: 83%;
+  right: -10%;
+  width: max-content;
+  background-color: var(--borders-color);
+  border-radius: 0.5rem;
+  padding: 0.56rem 0.28rem;
+  margin: 0.2rem;
+  color: var(--bg-white);
+  border: 0;
+}
+
+.flex__display__options {
+  display: flex;
+  cursor: pointer;
+  gap: 0.25rem;
+}
+.delete__modal{
+  color: var(--shadow-color);
+}
+.delete__option,.delete__modal{
+  font-size: 1.13rem;
+  font-weight: 900;
+}
+span.delete__option:hover, .delete__modal:hover{
+  color: var(--bg-black);
+}
+.display__options .options__li:hover {
+  background: var(--footer-color);
+  border-radius: 0.16rem;
+  padding: 0.08rem;
+}
+
+.btn__playlist {
+  cursor: pointer;
+  padding: 6.8px 2rem;
+  margin: 0.35rem 1rem;
+  background: var(--border-color);
+  border: 0;
+  outline: none;
+  color: var(--bg-white);
+  border-radius: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.btn__playlist:hover {
+  opacity: 0.9;
+}
+
+.input__playlist{
+  outline: none;
+  border: 0;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  margin: 0.2rem;
+}
+
+.list__input{
+  display: flex;
+  align-items: center;
+  padding: 0.1rem 2.5rem;
+}
+.list__play{
+  /* text-align: center; */
+}
+input[type="checkbox"]{
+  margin:0.25rem;
+  width: 1.18rem;
+  height: 1.18rem;
+  cursor: pointer;
+  border: var(--bg-white);
+}
+.input__title{
+  color: var(--bg-black);
+  font-weight: 580;
+}
+input:focus{
+  border: 2px solid var(--shadow-color);
+}
+span.list__span{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--bg-white);
+}
+
+.modal__flex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap:0.1rem;
+  padding: 0.1rem;
+}
+
+.bold__save{
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--bg-black);
+  padding: 0;
 }

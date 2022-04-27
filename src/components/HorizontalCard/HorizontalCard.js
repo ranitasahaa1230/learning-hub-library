@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillEye } from "react-icons/ai";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useVideos } from "../../contexts";
+import { usePlaylist } from "../../contexts";
 import { useToast } from "../../hooks";
 import {
   removeFromHistory,
@@ -15,18 +15,18 @@ export const HorizontalCard = ({ video }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { showToast } = useToast();
-  const { videoDispatch } = useVideos();
+  const { playListDispatch } = usePlaylist();
 
   const removeFromLikedVideo = () => {
-    removeFromLikes(_id, videoDispatch, showToast);
+    removeFromLikes(_id, playListDispatch, showToast);
   };
 
   const removeFromWatchLaterVideo = () => {
-    removeFromWatchLater(_id, videoDispatch, showToast);
+    removeFromWatchLater(_id, playListDispatch, showToast);
   };
 
   const removeFromHistoryVideo = () => {
-    removeFromHistory(_id, videoDispatch, showToast);
+    removeFromHistory(_id, playListDispatch, showToast);
   };
 
   return (
@@ -73,7 +73,7 @@ export const HorizontalCard = ({ video }) => {
       <div className="video__details">
         <span>
           <b>
-            <AiFillEye />{" "}
+            <AiFillEye size={18}/>{" "}
           </b>{" "}
           {views} Views{" "}
         </span>{" "}

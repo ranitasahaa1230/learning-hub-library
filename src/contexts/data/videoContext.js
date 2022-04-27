@@ -1,10 +1,5 @@
 import axios from "axios";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-} from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { videoReducer } from "../../reducers";
 import { videosActions } from "../../reducers/actionTypes";
 import { filterVideoList, getSearchedVideos } from "../../utlities";
@@ -16,9 +11,6 @@ const VideoProvider = ({ children }) => {
   const [videoState, videoDispatch] = useReducer(videoReducer, {
     loading: false,
     videos: [],
-    likedVideos:[],
-    watchLater:[],
-    history: [],
     error: "",
     selectedCategory: "all",
     searchQuery: "",
@@ -38,11 +30,19 @@ const VideoProvider = ({ children }) => {
     })();
   }, []);
 
-  const filteredList = filterVideoList(videoState.selectedCategory, videoState.videos);
-  const finalVideoList =getSearchedVideos(filteredList,videoState.searchQuery)
+  const filteredList = filterVideoList(
+    videoState.selectedCategory,
+    videoState.videos
+  );
+  const finalVideoList = getSearchedVideos(
+    filteredList,
+    videoState.searchQuery
+  );
 
   return (
-    <VideoContext.Provider value={{ videoState, videoDispatch, finalVideoList }}>
+    <VideoContext.Provider
+      value={{ videoState, videoDispatch, finalVideoList }}
+    >
       {children}
     </VideoContext.Provider>
   );

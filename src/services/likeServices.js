@@ -1,7 +1,7 @@
 import axios from "axios";
 import { UPDATE_LIKE_VIDEOS } from "../reducers";
 
-const addToLikes = async (video, videoDispatch, showToast) => {
+const addToLikes = async (video, playListDispatch, showToast) => {
   try {
     const {
       data: { likes },
@@ -13,14 +13,14 @@ const addToLikes = async (video, videoDispatch, showToast) => {
       }
     );
 
-    videoDispatch({ type: UPDATE_LIKE_VIDEOS, payload: likes });
+    playListDispatch({ type: UPDATE_LIKE_VIDEOS, payload: likes });
     showToast("Video added in liked videos", "success");
   } catch (error) {
     showToast("Could not add in liked videos", "error");
   }
 };
 
-const removeFromLikes = async (videoId, videoDispatch, showToast) => {
+const removeFromLikes = async (videoId, playListDispatch, showToast) => {
     try {
       const {
         data: { likes },
@@ -31,7 +31,7 @@ const removeFromLikes = async (videoId, videoDispatch, showToast) => {
         }
       );
   
-      videoDispatch({ type: UPDATE_LIKE_VIDEOS, payload: likes });
+      playListDispatch({ type: UPDATE_LIKE_VIDEOS, payload: likes });
       showToast("Video removed from liked videos", "success");
     } catch (error) {
       showToast("Could not remove the video", "error");

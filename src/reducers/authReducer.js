@@ -7,6 +7,13 @@ const authReducer = (state, action) => {
         user: action.payload.user,
         encodedToken: action.payload.encodedToken,
       };
+      case "LOG_OUT":
+        return {
+          ...state,
+          isAuth:null,
+          user:null,
+          encodedToken:null,
+        };
     default:
       throw new Error("Action type not found.");
   }

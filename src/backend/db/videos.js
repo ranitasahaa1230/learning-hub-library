@@ -7,7 +7,7 @@ export const videos = [
   {
     _id: "Ke90Tje7VS0",
     title: "React Tutorial for Beginners",
-    views:"4,704,622",
+    views:"4.7M",
     time:"2:25:26",
     description:
       "React JS Tutorial - Get up & running with React JS: the most popular JavaScript library in the world! Want to master React? Get my React mastery course for free. Subscribe for more videos like this.",
@@ -33,7 +33,7 @@ export const videos = [
   {
     _id: "Fnlnw8uY6jo",
     title: "Namaste JavaScript Course",
-    views:"352,419",
+    views:"3.2K",
     time:"19:10",
     description:
       "Hoisting in JavaScript is the most famous Interview Question. And it is also one of the most misunderstood concepts in JS. This video will cover in-depth knowledge and fundamentals behind variable and function hoisting. Hoisting as a core concept relies on the way how Execution Context is created. In the first phase i.e. the Memory Allocation Phase all the variables and functions are allocated memory, even before any code is executed. All the variables are assigned undefined at this point in time in the local memory. ",
@@ -59,7 +59,7 @@ export const videos = [
   {
     _id: "1oU_YGhT7ck",
     title: "Complete Redux Tutorial",
-    views:"210,262",
+    views:"2.1K",
     time:"56:24",
     description:
       "Welcome, to Complete Redux Tutorial for beginners in 2021. We will cover React with Redux and create an project with it",
@@ -85,7 +85,7 @@ export const videos = [
   {
     _id: "1hPgQWbWmEk",
     title: "Build an Instagram Clone with React Native, Firebase Firestore, Redux, Expo",
-    views:"333,941",
+    views:"3K",
     time:"5:50:14",
     description:
     "Learn how to build an Instagram clone using React Native, Firebase Firestore, Firebase storage, Redux, and Expo. The app includes an authentication system, database, storage, and more.",
@@ -111,7 +111,7 @@ export const videos = [
   {
     _id: "oSIv-E60NiU",
     title: "MongoDB Tutorial",
-    views:"384,640",
+    views:"3.8K",
     time:"1:13:35",
     description:
       "In this video, we will see the MongoDB NoSQL database in Hindi very closely. I have included a cheat sheet with this course which makes it easy for you to understand MongoDB",
@@ -137,7 +137,7 @@ export const videos = [
   {
     _id: "gp5H0Vw39yw",
     title: "Learn TypeScript - Full Course for Beginners",
-    views:"220,530",
+    views:"2.2M",
     time:"1:34:34",
     description:
       "Learn the TypeScript programming language in this crash course for beginners. By the end of this course you will understand all modern TypeScript features.",
@@ -163,7 +163,7 @@ export const videos = [
   {
     _id: "hEX8ohGSOyc",
     title: "Functions in variable | User Role in Javascript",
-    views:"34,226",
+    views:"3.4M",
     time:"8:42",
     description:
       "Welcome to javascript course. This is a new javascript course designed, created and recorded fresh in 2019. This course will give you a fantastic start for your javascript journey. After this course you can move to reactjs, AngularJS, nodeJS and many other such JS libraries and framework. My other courses are available at my website, so please go ahead and check it.",
@@ -189,7 +189,7 @@ export const videos = [
   {
     _id: "93p3LxR9xfM",
     title: "Redux Crash Course With React",
-    views:"778,124",
+    views:"7.85K",
     time:"1:09:22",
     description:
       "In this video we will talk about what Redux is and build a React app from scratch and add all of the boilerplate for Redux and work with the store/state, actions, reducers and all of the other fundamentals of the Redux state manager.",
@@ -215,7 +215,7 @@ export const videos = [
   {
     _id: "WBPrJSw7yQA",
     title: "Learn TypeScript in 50 Minutes",
-    views:"704,757",
+    views:"7.4K",
     time:"48:10",
     description:
       "TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript, and adds optional static typing to the language.In this typescript tutorial for beginners, we go over the fundamental concepts like variable declarations, variable types, functions, interfaces, classes and access modifiers.",
@@ -241,7 +241,7 @@ export const videos = [
   {
     _id: "pWbMrx5rVBE",
     title: "MongoDB In 30 Minutes",
-    views:"2,172,036",
+    views:"2.1K",
     time:"32:11",
     description:
       "In this video we will dive into the MongoDB NoSQL database and look at the fundamentals and the syntax to create, read, update and delete documents/data,",
@@ -267,7 +267,7 @@ export const videos = [
   {
     _id: "8pZ3ZDWEiRA",
     title: "React JS Advanced Tutorial",
-    views:"2,669",
+    views:"2K",
     time:"15:55",
     description:
       "In this react js Hindi tutorial we learn advanced topics. we get to know what is Recoil library in react js with a simple example.",
@@ -293,7 +293,7 @@ export const videos = [
   {
     _id: "dWZIPIc3szg",
     title: "this in JavaScript",
-    views:"675",
+    views:"6K",
     time:"11:02",
     description:
       "Explained this keyword and How the value of this changes dynamically with practical examples. | JS interview questions,  Javascript functions,  This in Javascript",
@@ -320,7 +320,7 @@ export const videos = [
   {
     _id: "ANdSdIlgsEw",
     title: "The Complete React Native Course 2021 : from Zero to Hero",
-    views:"256,876",
+    views:"2.5M",
     time:"6:45:20",
     description:
       "Learn to Build Native Android & iOS Applications with React Native. Included: React Hooks, Redux, React Navigation, Firebase Push Notification & Functional Component",
@@ -346,7 +346,7 @@ export const videos = [
   {
     _id: "sfmL6bGbiN8",
     title: "Build a Shopping Cart with React and TypeScript",
-    views:"156,578",
+    views:"1.52K",
     time:"1:06:44",
     description:
       "Learn the fundamentals and how to build a ReactJS shopping cart with Typescript, Material UI, Styled Components and React-Query. This tutorial uses a free open API for dummy data to the items in the shop. React-Query hooks is used for fetching the data from the API. Styled Components is used in combination with Material UI to customize the styles.",
@@ -372,7 +372,7 @@ export const videos = [
   {
     _id: "b9eMGE7QtTk",
     title: "React JS Crash Course",
-    views:"124,279",
+    views:"12M",
     time:"1:11:43",
     description:
       "Are you wondering how to become a React developer? Look no further, and get all the info in one video. The first 1,000 people to use this link will get a 1 month free trial of Skillshare",

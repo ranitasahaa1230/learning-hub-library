@@ -8,7 +8,7 @@ import {
   AuthProvider,
   CategoryProvider,
   ThemeProvider,
-  VideoProvider,
+  VideoProvider,PlayListProvider
 } from "./contexts";
 
 // Call make Server
@@ -19,11 +19,13 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <ThemeProvider>
+        <PlayListProvider>
           <VideoProvider>
             <CategoryProvider>
                 <App />
             </CategoryProvider>
           </VideoProvider>
+          </PlayListProvider>
         </ThemeProvider>
       </AuthProvider>
     </BrowserRouter>

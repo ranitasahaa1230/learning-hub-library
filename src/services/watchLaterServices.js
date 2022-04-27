@@ -1,7 +1,7 @@
 import axios from "axios";
 import { UPDATE_WATCH_LATER_VIDEOS } from "../reducers";
 
-const addToWatchLater = async (video, videoDispatch, showToast) => {
+const addToWatchLater = async (video, playListDispatch, showToast) => {
   try {
     const {
       data: { watchlater },
@@ -10,14 +10,14 @@ const addToWatchLater = async (video, videoDispatch, showToast) => {
       { video },
       { headers: { authorization: localStorage.getItem("token") } }
     );
-    videoDispatch({ type: UPDATE_WATCH_LATER_VIDEOS, payload: watchlater });
+    playListDispatch({ type: UPDATE_WATCH_LATER_VIDEOS, payload: watchlater });
     showToast("Video added in watch later videos", "success");
   } catch (error) {
     showToast("Could not add in watch later videos", "error");
   }
 };
 
-const removeFromWatchLater = async (videoId, videoDispatch, showToast) => {
+const removeFromWatchLater = async (videoId, playListDispatch, showToast) => {
     try {
       const {
         data: { watchlater },
@@ -28,7 +28,7 @@ const removeFromWatchLater = async (videoId, videoDispatch, showToast) => {
         }
       );
   
-      videoDispatch({ type: UPDATE_WATCH_LATER_VIDEOS, payload: watchlater });
+      playListDispatch({ type: UPDATE_WATCH_LATER_VIDEOS, payload: watchlater });
       showToast("Video removed from watch later videos", "success");
     } catch (error) {
       showToast("Could not remove the video", "error");
