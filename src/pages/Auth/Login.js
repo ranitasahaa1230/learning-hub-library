@@ -28,10 +28,11 @@ export function Login() {
       localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("token", encodedToken);
       if (location.state !== null) {
-        navigate(location?.state?.from?.pathname);
+        navigate(location.state?.from?.pathname);
       } else {
         navigate("/");
       }
+      // navigate(location.state?.from?.pathname || "/",{replace:true});
       showToast("Logged In!", "success");
     } catch (error) {
       showToast(error.response.data.errors[0], "error");

@@ -1,14 +1,16 @@
 import { useLocation, Navigate } from "react-router-dom";
 import { useAuth } from "../../contexts";
 
-
 export const RequireAuth = ({ children }) => {
   const {
-    state: { isAuth },
+    state: { encodedToken },
   } = useAuth();
 
   const location = useLocation();
-  const from = location;
 
-  return isAuth ? children : <Navigate to="/login" state={from} replace />;
+  return encodedToken ? (
+    children
+  ) : (
+    <Navigate to="/login" state={{ from: location}} replace={true}/>
+  );
 };

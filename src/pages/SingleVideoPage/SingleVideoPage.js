@@ -3,7 +3,7 @@ import { AiFillEye } from "react-icons/ai";
 import { Container } from "react-bootstrap";
 import { MdOutlineWatchLater, MdThumbUp, MdPlaylistAdd } from "react-icons/md";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useToast, useDocumentTitle } from "../../hooks";
 import "./SingleVideoPage.css";
 import { useAuth, usePlaylist } from "../../contexts";
@@ -27,12 +27,14 @@ export const SingleVideoPage = () => {
   const { videoId } = useParams();
   const { showToast } = useToast();
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   const {
     playListState: { likedVideos, watchLater, history },
     playListDispatch,
   } = usePlaylist();
   const {
-    state: { user, encodedToken },
+    state: { user, encodedToken},
   } = useAuth();
 
   useDocumentTitle("Single Video Details");
@@ -85,7 +87,7 @@ export const SingleVideoPage = () => {
   }, [user, video]);
 
   const handleLikeHandler = () => {
-    if (!user) {
+    if (!encodedToken) {
       showToast("Please Login to continue!", "error");
     } else {
       if (!videoInLiked) {
@@ -97,7 +99,7 @@ export const SingleVideoPage = () => {
   };
 
   const handleWatchLater = () => {
-    if (!user) {
+    if (!encodedToken) {
       showToast("Please Login to continue!", "error");
     } else {
       if (!videoInWatchLater) {
@@ -109,7 +111,7 @@ export const SingleVideoPage = () => {
   };
 
   const handleSaveToPlaylist = () => {
-    if (!user) {
+    if (!encodedToken) {
       showToast("Please Login to continue!", "error");
     } else {
       setShowModal(true);

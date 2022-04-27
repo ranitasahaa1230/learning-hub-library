@@ -8,14 +8,16 @@ import "./Profile.css";
 export const Profile = () => {
   useDocumentTitle("User Prodile Page");
   const {
-    state: { user },
+    state: { user },dispatch,
   } = useAuth();
   const { showToast } = useToast();
   const navigate = useNavigate();
 
   const logoutHandler = () => {
-    localStorage.clear();
-    navigate(0);
+    dispatch({type:"LOG_OUT"});
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    navigate("/");
     showToast("Logged Out!", "success");
   };
 

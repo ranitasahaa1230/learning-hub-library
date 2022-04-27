@@ -18,15 +18,14 @@ export const Sidebar = () => {
   const { showToast } = useToast();
   const navigate = useNavigate();
   const {
-    state: { isAuth },
+    state: { isAuth },dispatch,
   } = useAuth();
 
   const logoutHandler = () => {
-    // localStorage.removeItem("login");
-    // localStorage.removeItem("user");
-    // localStorage.removeItem("signup");
-    localStorage.clear();
-    navigate(0);
+    dispatch({type:"LOG_OUT"});
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    navigate("/");
     showToast("Logged Out!", "success");
   };
 
