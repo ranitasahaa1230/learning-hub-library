@@ -1,0 +1,14 @@
+.modal__properties {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  right: 4%;
+  top: 75%;
+  background: var(--color);
+  padding: 0.4rem 0.68rem;
+  border-radius: 1.2rem;
+  text-align: center;
+  width: 18rem;
+}
