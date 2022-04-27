@@ -18,7 +18,7 @@
 
 ## About
 
-- Learning Hub is a video-library platform for the ones who love coding or for the people who wants to get started with coding.
+- Learning Hub is a video-library platform for the ones who love coding or for the people who want to get started with coding, all curated in one place.
 
 ## 🛠 Technologies used
 
