@@ -4,14 +4,11 @@
   flex-direction: column;
   position: absolute;
   z-index: 2;
-  right: 5%;
-  top: 1%;
-  background: linear-gradient(
-    to right,
-    #5ac8fa,
-    #9163cb
-      );
-  padding: 0.8rem 0.5rem;
+  right: 4%;
+  top: 75%;
+  background: var(--color);
+  padding: 0.4rem 0.68rem;
   border-radius: 1.2rem;
   text-align: center;
+  width: 18rem;
 }
