@@ -82,21 +82,15 @@
 
 ## Demo
 
-<<<<<<< HEAD
-=======
-
 https://user-images.githubusercontent.com/37957073/165530530-5b8c25e6-d919-4071-8fa0-cfb62f437c44.mp4
 
-
-
->>>>>>> 47044ac261ffc8b448aa92f8b2b3a78f59802cdb
 ## Getting Started
 
 ## **How to install and run locally ?**
 
 ```
-$ git clone https://github.com/rutvikpumak/bookwise.git
-$ cd bookwise
+$ git clone https://github.com/ranitasahaa1230/learning-hub-library.git
+$ cd learning-hub-library
 $ npm install
 $ npm start
 ```
