@@ -2,9 +2,9 @@
 
 <img alt="learninh hub logo" src="src/assets/logo.png" width="150px" height="150px" />
 
-</div>
-
 # Learning Hub
+
+</div>
 
 ## Table of Contents
 
@@ -78,10 +78,9 @@
 
 ## Live link
 
-[Learning Hub](hhttps://learning-hub-library.netlify.app/)
+[Learning Hub](https://learning-hub-library.netlify.app/)
 
 ## Demo
-
 
 ## Getting Started
 
