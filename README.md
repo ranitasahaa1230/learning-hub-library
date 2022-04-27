@@ -2,7 +2,7 @@
 
 <img alt="learninh hub logo" src="src/assets/logo.png" width="150px" height="150px" />
 
-# Evolt-Prime 📺
+# Learning Hub 📺
 
 <!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/4ac9a6ef-5511-4f30-b805-412e65dd7a40/deploy-status)](https://app.netlify.com/sites/evolt-prime/deploys) -->
 
