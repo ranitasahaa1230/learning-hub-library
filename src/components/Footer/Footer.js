@@ -9,6 +9,7 @@ export const Footer = () => {
         <a
           href="https://github.com/ranitasahaa1230/learning-hub-library"
           target="_blank"
+          rel="noopener noreferrer"
           className="nav-pills"
         >
           <i className="fab fa-github icon"></i>
@@ -16,6 +17,7 @@ export const Footer = () => {
         <a
           href="https://twitter.com/Ifullofsunshine"
           target="_blank"
+          rel="noopener noreferrer"
           className="nav-pills"
         >
           <i className="fab fa-twitter icon"></i>
@@ -23,6 +25,7 @@ export const Footer = () => {
         <a
           href="https://www.linkedin.com/in/saharanitaa1230dreamer/"
           target="_blank"
+          rel="noopener noreferrer"
           className="nav-pills"
         >
           <i className="fab fa-linkedin icon"></i>
