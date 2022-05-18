@@ -1,6 +1,6 @@
 <div align="center">
 
-<img alt="learninh hub logo" src="src/assets/logo.png" width="150px" height="150px" />
+<img alt="learning hub logo" src="src/assets/logo.png" width="150px" height="150px" />
 
 # Learning Hub
 
