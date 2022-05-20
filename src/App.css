@@ -86,7 +86,4 @@ body {
 
 .section__page {
   min-height: calc(100vh - 150px);
-  /* margin-top: 3rem; */
-  /* padding-top: 4rem; */
-  /* padding-top: 1rem; */
 }

@@ -3,11 +3,11 @@
     color: var(--bg-code);
     margin: 0.6rem 0.8rem 1.1rem 0.8rem;
     padding: 0 0.5rem;
-    font-weight: 595;
+    font-weight: 598;
 }
 
 .sorted__default{
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.4rem;
     font-size: 1.2rem;
 }
 .default{
@@ -16,6 +16,7 @@
 .sorted__videos{
     display: flex;
     place-items: center;
+    flex-wrap: wrap;
     gap:0.8rem;
 }
 

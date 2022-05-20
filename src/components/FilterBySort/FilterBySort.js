@@ -19,7 +19,7 @@ export const FilterBySort = () => {
   return (
     <div className="sorted">
       <div className="sorted__default" onClick={() => showSort()}>
-        <BiSort size={30} />
+        <BiSort size={32} />
         <span className="default">Sorted By {sortBy}</span>
       </div>
 
