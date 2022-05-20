@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { BiSort } from "react-icons/bi";
 import { useVideos } from "../../contexts";
-import { LOADING } from "../../reducers";
 import { videosActions } from "../../reducers/actionTypes";
-import { Loader } from "../Loader/Loader";
 import "./FilterBySort.css";
 
 export const FilterBySort = () => {
