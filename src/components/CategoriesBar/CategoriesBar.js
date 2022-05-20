@@ -2,6 +2,7 @@ import React from "react";
 import { useCategory, useVideos } from "../../contexts";
 import { videosActions } from "../../reducers/actionTypes";
 import "./CategoriesBar.css";
+import { FilterBySort } from "../FilterBySort/FilterBySort";
 
 export const CategoriesBar = () => {
   const {
@@ -14,6 +15,7 @@ export const CategoriesBar = () => {
   const { SET_CATEGORY } = videosActions;
 
   return (
+    <>
     <div className="categoriesBar">
       <span
         className={`${selectedCategory === "all" ? "active" : ""}`}
@@ -33,5 +35,10 @@ export const CategoriesBar = () => {
         );
       })}
     </div>
+
+    <div>
+    <FilterBySort/>
+    </div>
+</>
   );
 };

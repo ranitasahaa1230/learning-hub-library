@@ -2,7 +2,11 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { videoReducer } from "../../reducers";
 import { videosActions } from "../../reducers/actionTypes";
-import { filterVideoList, getSearchedVideos } from "../../utlities";
+import {
+  filterVideoList,
+  getSearchedVideos,
+  sortVideoList,
+} from "../../utlities";
 const { INITIALIZE, SET_VIDEOS, SET_ERROR } = videosActions;
 
 const VideoContext = createContext();
@@ -14,6 +18,7 @@ const VideoProvider = ({ children }) => {
     error: "",
     selectedCategory: "all",
     searchQuery: "",
+    sortBy: "Default",
   });
 
   useEffect(() => {
@@ -30,10 +35,8 @@ const VideoProvider = ({ children }) => {
     })();
   }, []);
 
-  const filteredList = filterVideoList(
-    videoState.selectedCategory,
-    videoState.videos
-  );
+  const sortVideos = sortVideoList(videoState.videos, videoState.sortBy);
+  const filteredList = filterVideoList(videoState.selectedCategory, sortVideos);
   const finalVideoList = getSearchedVideos(
     filteredList,
     videoState.searchQuery

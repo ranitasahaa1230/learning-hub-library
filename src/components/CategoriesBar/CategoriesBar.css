@@ -1,10 +1,10 @@
 .categoriesBar {
-  padding: 1rem;
+  padding: 1rem 1rem 0.58rem 1rem;
   font-size: 0.8rem;
   scrollbar-width: none;
   display: flex;
   overflow-x: scroll;
-  margin: 0.8rem 0;
+  margin: 0.8rem 0 0.48rem 0;
   color: var(--bg-code);
 }
 .categoriesBar::-webkit-scrollbar {

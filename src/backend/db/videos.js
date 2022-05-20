@@ -3,7 +3,7 @@
  * You can add videos of your wish with different attributes
  * */
 
-export const videos = [
+ export const videos = [
   {
     _id: "Ke90Tje7VS0",
     title: "React Tutorial for Beginners",
