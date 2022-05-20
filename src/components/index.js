@@ -9,4 +9,5 @@ export { Toast } from "./Toast/Toast";
 export { Loader } from "./Loader/Loader";
 export { HorizontalCard } from "./HorizontalCard/HorizontalCard";
 export { Modal } from "./Modal/Modal";
+export { FilterBySort } from "./FilterBySort/FilterBySort";
 

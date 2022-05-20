@@ -8,6 +8,9 @@ const videosActions = {
   SET_LIKES:"SET_LIKES",
   // ADD_LIKE_VIDEOS:"ADD_LIKE_VIDEOS",
   // REMOVE_LIKE_VIDEOS:"REMOVE_LIKE_VIDEOS",
+  Default:"Default",
+  Latest:"Latest",
+  Earliest:"Earliest"
 };
 
 export { videosActions };
