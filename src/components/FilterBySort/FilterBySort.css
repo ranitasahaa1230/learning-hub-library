@@ -1,0 +1,30 @@
+.sorted{
+    cursor: pointer;
+    color: var(--bg-code);
+    margin: 0.6rem 0.8rem 1.1rem 0.8rem;
+    padding: 0 0.5rem;
+    font-weight: 595;
+}
+
+.sorted__default{
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+.default{
+    border-bottom: 2px solid var(--bg-code);
+}
+.sorted__videos{
+    display: flex;
+    place-items: center;
+    gap:0.8rem;
+}
+
+.filter-categories{
+    cursor: pointer;
+    margin: 0 0.2rem 0 0;
+    font-size: 1.15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.12rem;
+}
