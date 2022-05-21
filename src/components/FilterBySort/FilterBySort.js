@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BiSort } from "react-icons/bi";
+import { FaSort } from "react-icons/fa";
 import { useVideos } from "../../contexts";
 import { videosActions } from "../../reducers/actionTypes";
 import "./FilterBySort.css";
@@ -19,7 +19,7 @@ export const FilterBySort = () => {
   return (
     <div className="sorted">
       <div className="sorted__default" onClick={() => showSort()}>
-        <BiSort size={32} />
+        <FaSort size={32} />
         <span className="default">Sorted By {sortBy}</span>
       </div>
 
@@ -58,7 +58,7 @@ export const FilterBySort = () => {
                 }, 1000);
               }}
             />
-            Date followed: Latest
+            Date Added: Latest
           </label>
 
           <label htmlFor="sort-by-earliest" className="filter-categories">
@@ -76,7 +76,7 @@ export const FilterBySort = () => {
                 }, 1000);
               }}
             />
-            Date followed: Earliest
+            Date Added: Earliest
           </label>
         </div>
       )}
