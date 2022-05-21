@@ -42,12 +42,12 @@ export const Sidebar = () => {
           </li>
         </NavLink>
 
-        <NavLink to="/explore" className="navlink">
+        {/* <NavLink to="/explore" className="navlink">
           <li>
             <MdOutlineExplore size={25} />
             <span>Explore</span>
           </li>
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/playlists" className="navlink">
           <li>
             <MdPlaylistAdd size={25} />

@@ -52,9 +52,9 @@ export const Header = () => {
         )}
       </div>
 
-      <Link to="/signup">
+      {!isAuth && <Link to="/signup">
         <button className="header__signup">SIGN UP</button>
-      </Link>
+      </Link>}
 
       {isAuth ? (
         <Link to="/userProfile" className="header__icons">
