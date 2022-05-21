@@ -12,6 +12,7 @@ const PlayListProvider = ({ children }) => {
     likedVideos: [],
     watchLater: [],
     history: [],
+    uploadVideos:[],
   });
 
   const { user } = useAuth();

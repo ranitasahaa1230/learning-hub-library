@@ -12,6 +12,7 @@ import {
   SingleVideoPage,
   Profile,
   PlaylistPage,
+  UploadVideo,
 } from "./pages";
 import Mockman from "mockman-js";
 import { useTheme } from "./contexts";
@@ -74,6 +75,14 @@ function App() {
           element={
             <RequireAuth>
               <PlaylistPage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/upload-video"
+          element={
+            <RequireAuth>
+              <UploadVideo />
             </RequireAuth>
           }
         />
