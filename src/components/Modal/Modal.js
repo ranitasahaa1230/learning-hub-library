@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import { usePlaylist } from "../../contexts";
 import { useToast } from "../../hooks";
 import { playListModalReducer } from "../../reducers";
+// import { useLocation } from "react-router-dom";
 import {
   addToPlaylist,
   createToPlaylist,
@@ -12,6 +13,7 @@ import "./Modal.css";
 
 export const Modal = ({ video, setShowModal }) => {
   const { showToast } = useToast();
+  // const { pathname } = useLocation();
   const {
     playListState: { playLists },
     playListDispatch,
@@ -23,7 +25,6 @@ export const Modal = ({ video, setShowModal }) => {
       showInput: false,
       playListName: "",
     });
-
   const handleInputChange = (event) => {
     playListModalDispatch({
       type: "SET_NEW_PLAYLIST_NAME",
@@ -58,7 +59,10 @@ export const Modal = ({ video, setShowModal }) => {
       <form className="modal__shows" onSubmit={handleFormSubmit}>
         <div className="modal__flex">
           <div className="bold__save">Save to:</div>
-          <span className="delete__modal" onClick={()=>setShowModal(prev=>!prev)}>
+          <span
+            className="delete__modal"
+            onClick={() => setShowModal((prev) => !prev)}
+          >
             <i className="fa-solid fa-xmark"></i>
           </span>
         </div>

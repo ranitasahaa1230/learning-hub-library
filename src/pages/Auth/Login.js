@@ -87,16 +87,16 @@ export function Login() {
                 onClick={() => setShowPassword((showPassword) => !showPassword)}
               >
                 {showPassword ? (
-                  <i className="fa-solid fa-eye"></i>
-                ) : (
                   <i className="fa-solid fa-eye-slash"></i>
+                ) : (
+                  <i className="fa-solid fa-eye"></i>
                 )}
               </span>
             }
           </div>
           <div>
             <div className="checkbox-block">
-              <input type="checkbox" className="check-box" />
+              <input type="checkbox" className="check-box" checked required/>
               <span className="check-psswd">Remember Me</span>
               <Link to="/">
                 <span

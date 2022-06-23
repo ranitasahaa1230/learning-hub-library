@@ -191,10 +191,10 @@ export const SingleVideoPage = () => {
               <hr />
               <div>
                 <div className="comments__section">
-                  <h5>
+                  {/* <h5>
                     <i className="fa fa-align-left"></i>
                   </h5>
-                  <div>Comments :</div>
+                  <div>Comments :</div> */}
                 </div>
               </div>
             </div>

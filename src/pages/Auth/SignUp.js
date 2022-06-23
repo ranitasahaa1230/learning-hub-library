@@ -27,6 +27,7 @@ export function SignUp() {
   const { showToast } = useToast();
 
   const [showPassword, setShowPassword] = useState(false);
+  const [confirmPassVisible, setConfirmPassVisible] = useState(false);
   const [error, setError] = useState("");
 
   const handleFormSubmit = async (event) => {
@@ -51,11 +52,8 @@ export function SignUp() {
       showToast("Account Created and Logged In!", "success");
     } catch (error) {
       showToast(error.response.data.errors[0], "error");
+      setError("Sign up failed.");
     }
-  };
-
-  const registerHandler = () => {
-    if (password !== confirmPassword) setError("Passwords do not match");
   };
 
   return (
@@ -114,6 +112,8 @@ export function SignUp() {
               className="visibility-fields"
               placeholder="Enter Password"
               value={password}
+              maxLength="20"
+                  minLength="6"
               onChange={(e) =>
                 dispatch({ type: "PASSWORD", payload: e.target.value })
               }
@@ -126,9 +126,9 @@ export function SignUp() {
                 onClick={() => setShowPassword((showPassword) => !showPassword)}
               >
                 {showPassword ? (
-                  <i className="fa-solid fa-eye"></i>
-                ) : (
                   <i className="fa-solid fa-eye-slash"></i>
+                ) : (
+                  <i className="fa-solid fa-eye"></i>
                 )}
               </span>
             }
@@ -139,10 +139,12 @@ export function SignUp() {
           </label>
           <div className="visibility">
             <input
-              type={showPassword ? "text" : "password"}
+              type={confirmPassVisible ? "text" : "password"}
               className="visibility-fields"
               placeholder="Enter Confirm Password"
               value={confirmPassword}
+              maxLength="20"
+                  minLength="6"
               onChange={(e) =>
                 dispatch({
                   type: "CONFIRM_PASSWORD",
@@ -155,12 +157,12 @@ export function SignUp() {
             {
               <span
                 className="visibility-icon"
-                onClick={() => setShowPassword((showPassword) => !showPassword)}
+                onClick={() => setConfirmPassVisible((confirmPassVisible) => !confirmPassVisible)}
               >
-                {showPassword ? (
-                  <i className="fa-solid fa-eye"></i>
-                ) : (
+                {confirmPassVisible ? (
                   <i className="fa-solid fa-eye-slash"></i>
+                ) : (
+                  <i className="fa-solid fa-eye"></i>
                 )}
               </span>
             }
@@ -169,13 +171,14 @@ export function SignUp() {
           <div className="checkbox-block">
             <input type="checkbox" className="check-box" />
             <span className="check-psswd">
-              I agree to all terms and conditions
+              {/* I agree to all terms and conditions */}
+              Sign up for emails to get updates
             </span>
           </div>
           <button
             type="submit"
             className="submit-loginbtns"
-            onClick={registerHandler}
+            disabled={password !==confirmPassword}
           >
             REGISTER
           </button>
@@ -184,6 +187,13 @@ export function SignUp() {
             <div className="login-error-msg">
               <i className="fa-solid fa-square-xmark"></i>
               <p>{error}</p>
+            </div>
+          )}
+
+          {password !==confirmPassword && (
+            <div className="login-error-msg">
+              <i className="fa-solid fa-square-xmark"></i>
+              <p>Passwords don't match</p>
             </div>
           )}
 
