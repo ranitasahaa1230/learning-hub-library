@@ -81,6 +81,12 @@
   border: none;
 }
 
+.form-right{
+  display: flex;
+  place-items: center;
+  gap: 2.5rem;
+}
+
 .mode__icons {
   font-size: 1.4rem;
   cursor: pointer;

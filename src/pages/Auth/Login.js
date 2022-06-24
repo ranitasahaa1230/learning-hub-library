@@ -98,14 +98,14 @@ export function Login() {
             <div className="checkbox-block">
               <input type="checkbox" className="check-box" checked required/>
               <span className="check-psswd">Remember Me</span>
-              <Link to="/">
+              {/* <Link to="/">
                 <span
                   className="forget-psswd"
                   onClick={() => navigate("/forgetPwd")}
                 >
                   Forgot Your Password?
                 </span>
-              </Link>
+              </Link> */}
             </div>
             <button
               type="submit"

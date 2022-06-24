@@ -2,6 +2,7 @@ import React from "react";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
+import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./Header.css";
 import { Link} from "react-router-dom";
@@ -11,6 +12,7 @@ import { videosActions } from "../../reducers/actionTypes";
 export const Header = () => {
   const { theme, changeTheme } = useTheme();
   const { handleToggleSidebar } = useCategory();
+  const { pathname } = useLocation();
   const {
     state: { isAuth, user },
   } = useAuth();
@@ -36,14 +38,15 @@ export const Header = () => {
         </Link>
       </div>
 
-      <form>
+      {pathname ==="/" && <form>
         <input type="text" placeholder="Search for your Favorite Videos..." 
         onChange={(e) =>videoDispatch({ type: FILTER_BY_SEARCH, payload: e.target.value })}/>
         <button type="submit">
           <AiOutlineSearch size={22} />
         </button>
-      </form>
+      </form>}
 
+      <div className="form-right">
       <div className="mode__icons" onClick={changeTheme}>
         {theme ? (
           <i className="fa-solid fa-moon"></i>
@@ -74,6 +77,8 @@ export const Header = () => {
           </div>
         </Link>
       )}
+      </div>
+
     </div>
   );
 };
