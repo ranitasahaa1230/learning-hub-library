@@ -84,7 +84,7 @@
 .form-right{
   display: flex;
   place-items: center;
-  gap: 2.5rem;
+  gap: 3.5rem;
 }
 
 .mode__icons {

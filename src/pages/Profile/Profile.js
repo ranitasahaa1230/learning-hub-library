@@ -6,7 +6,7 @@ import { useDocumentTitle, useToast } from "../../hooks";
 import "./Profile.css";
 
 export const Profile = () => {
-  useDocumentTitle("User Prodile Page");
+  useDocumentTitle("User Profile Page");
   const {
     state: { user },dispatch,
   } = useAuth();
