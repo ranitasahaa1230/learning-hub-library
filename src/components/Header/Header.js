@@ -2,7 +2,7 @@ import React from "react";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./Header.css";
 import { Link} from "react-router-dom";
