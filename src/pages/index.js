@@ -8,5 +8,6 @@ export { Login } from "./Auth/Login";
 export { SignUp } from "./Auth/SignUp";
 export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
 export { Profile } from "./Profile/Profile";
+export { UploadVideo } from "./UploadVideo/UploadVideo";
 export { PlaylistPage } from "./Playlist/components/PlaylistPage";
 

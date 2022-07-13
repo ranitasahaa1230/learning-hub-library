@@ -8,6 +8,7 @@ import {
   MdHome,
   MdPlaylistAdd,
 } from "react-icons/md";
+import {RiVideoUploadFill} from "react-icons/ri";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth, useCategory } from "../../contexts";
 import { useToast } from "../../hooks";
@@ -72,6 +73,13 @@ export const Sidebar = () => {
             <span>History</span>
           </li>
         </NavLink>
+        <NavLink to="/upload-video" className="navlink">
+          <li>
+            <RiVideoUploadFill size={25} />
+            <span>Upload Video</span>
+          </li>
+        </NavLink>
+
         <hr />
 
         {isAuth && (
